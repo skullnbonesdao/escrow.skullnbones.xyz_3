@@ -2,16 +2,17 @@
 import { useGlobalStore } from 'src/stores/globalStore';
 import EscrowTable from 'components/tables/EscrowTable.vue';
 import { onMounted } from 'vue';
+import { useEscrowStore } from '../stores/escrowStore';
 
 onMounted(() => {
-    useGlobalStore().showLeftDrawer = true;
-    useGlobalStore().showRightDrawer = false;
+  useGlobalStore().showLeftDrawer = true;
+  useGlobalStore().showRightDrawer = false;
 });
 </script>
 <template>
-    <q-page class="row">
-        <q-scroll-area class="col">
-            <EscrowTable v-if="useGlobalStore().is_init" />
-        </q-scroll-area>
-    </q-page>
+  <q-page class="row">
+    <q-scroll-area class="col">
+      <EscrowTable v-if="useGlobalStore().is_init" />
+    </q-scroll-area>
+  </q-page>
 </template>

@@ -7,28 +7,26 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import { RPC_NETWORKS } from 'stores/interfaces/RPC_Networks';
 import { useWorkspace } from 'src/adapter/adapterPrograms';
 
-
 export const useGlobalStore = defineStore('globalStore', {
-    state: () => ({
-        is_init: false,
-        rpc_selected: RPC_NETWORKS[0],
-        connection: {} as Connection,
-        showLeftDrawer: false,
-        showRightDrawer: false,
-        token_list: token_list_local.tokens as I_Token[],
-
-    }),
-    getters: {},
-    actions: {
-        init() {
-            this.update_connection();
-        },
-        update_connection() {
-            console.log('RPC is set to: ' + this.rpc_selected.url);
-            this.connection = new Connection(this.rpc_selected.url, {
-                commitment: 'confirmed',
-            });
-        },
-
+  state: () => ({
+    is_init: false,
+    rpc_selected: RPC_NETWORKS[0],
+    connection: {} as Connection,
+    showLeftDrawer: false,
+    leftDrawerMini: false,
+    showRightDrawer: false,
+    token_list: token_list_local.tokens as I_Token[],
+  }),
+  getters: {},
+  actions: {
+    init() {
+      this.update_connection();
     },
+    update_connection() {
+      console.log('RPC is set to: ' + this.rpc_selected.url);
+      this.connection = new Connection(this.rpc_selected.url, {
+        commitment: 'confirmed',
+      });
+    },
+  },
 });
