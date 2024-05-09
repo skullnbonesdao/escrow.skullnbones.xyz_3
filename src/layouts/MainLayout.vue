@@ -29,16 +29,6 @@
       @click.capture="leftDrawerClick"
     >
       <FilterEscrows />
-      <div class="q-mini-drawer-hide absolute" style="top: 15px; right: -17px">
-        <q-btn
-          dense
-          round
-          unelevated
-          color="accent"
-          icon="chevron_left"
-          @click="useGlobalStore().leftDrawerMini = true"
-        />
-      </div>
     </q-drawer>
 
     <q-drawer
@@ -60,6 +50,17 @@
         </q-tabs>
       </div>
       <EscrowTakeView />
+
+      <div class="q-mini-drawer-hide absolute" style="top: 10px; left: -17px">
+        <q-btn
+          dense
+          round
+          unelevated
+          color="accent"
+          icon="chevron_right"
+          @click="useGlobalStore().showRightDrawer = false"
+        />
+      </div>
     </q-drawer>
 
     <q-page-container>

@@ -10,10 +10,11 @@ import FormatTokenNumber from 'components/elements/FormatTokenNumber.vue';
 import { useRoute } from 'vue-router';
 import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
 import { I_Escrows, useEscrowStore } from 'stores/escrowStore';
+import { watchDebounced } from '@vueuse/core';
 
 const decimals = 9;
 
-const expandable = ref(useRoute().path.includes('exchange'));
+const sort_tab = ref('buy_name');
 
 const columns = [
   {
@@ -85,6 +86,23 @@ function make_take_view(escrow: I_Escrows) {
       rowsPerPage: 0,
     }"
   >
+    <template v-slot:top>
+      <div class="row full-width items-center">
+        <div class="col text-subtitle1">Sort by</div>
+        <div>
+          <q-tabs
+            v-model="sort_tab"
+            dense
+            align="justify"
+            class="bg-primary text-white"
+            :breakpoint="0"
+          >
+            <q-tab name="buy_ppu" label="buy ppU" />
+            <q-tab name="sell_ppu" label="sell ppU" />
+          </q-tabs>
+        </div>
+      </div>
+    </template>
     <template v-slot:body="props">
       <q-tr :props="props" @click="make_take_view(props.row)">
         <q-td key="tokens" :props="props">
@@ -251,15 +269,17 @@ function make_take_view(escrow: I_Escrows) {
           </div>
         </q-td>
 
-        <q-td key="actions" :props="props" class="q-gutter-x-sm">
-          <q-btn
-            v-if="!useRoute().path.includes('manage')"
-            dense
-            color="secondary"
-            icon="keyboard_double_arrow_right"
-          />
+        <q-td key="actions" :props="props">
+          <div class="row items-center justify-around q-gutter-sm">
+            <q-btn
+              v-if="!useRoute().path.includes('manage')"
+              dense
+              color="secondary"
+              icon="keyboard_double_arrow_right"
+            />
 
-          <CancelEscrow v-if="useRoute().path.includes('manage')" />
+            <CancelEscrow v-if="useRoute().path.includes('manage')" />
+          </div>
         </q-td>
       </q-tr>
     </template>

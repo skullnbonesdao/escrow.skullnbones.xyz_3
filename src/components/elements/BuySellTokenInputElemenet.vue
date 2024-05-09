@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { I_Token } from 'stores/interfaces/I_TokenList';
 import CustomNumberInput from 'components/input/CustomNumberInput.vue';
-import TokenSelectInput from 'components/elements/TokenSelectInput.vue';
+import TokenSelectInput from 'components/input/TokenSelectInput.vue';
 import { PropType, ref, watch } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 

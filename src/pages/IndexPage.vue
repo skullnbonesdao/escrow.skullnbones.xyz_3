@@ -2,6 +2,10 @@
 import { useQuasar } from 'quasar';
 import { onMounted } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
+import {
+  get_token_amount_wallet,
+  userTokenStore,
+} from '../stores/userTokenStore';
 
 onMounted(() => {
   useGlobalStore().showLeftDrawer = false;
@@ -11,6 +15,7 @@ onMounted(() => {
 
 <template>
   <q-page class="row items-center justify-evenly q-pa-xl">
+    {{ get_token_amount_wallet('ZEUS1aR7aX8DFFJf5QjWj2ftDDdNTroMNGo8YoQm3Gq') }}
     <div class="q-gutter-y-xl">
       <div>
         <p class="text-h1">Escrow Service</p>
@@ -22,8 +27,8 @@ onMounted(() => {
       >
         <q-card flat class="col">
           <q-card-section class="text-h4 text-center"
-            >Secure Exchange </q-card-section
-          >
+            >Secure Exchange
+          </q-card-section>
           <q-separator />
           <q-card-section
             ><p>
@@ -51,7 +56,9 @@ onMounted(() => {
           >
         </q-card>
         <q-card flat class="col">
-          <q-card-section class="text-h4 text-center">Third-Party Mediation</q-card-section>
+          <q-card-section class="text-h4 text-center"
+            >Third-Party Mediation</q-card-section
+          >
           <q-separator />
           <q-card-section
             ><p>

@@ -4,6 +4,7 @@ import { useWorkspace } from 'src/adapter/adapterPrograms';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
 import {
+  ComputeBudgetProgram,
   Connection,
   PublicKey,
   SystemProgram,
@@ -22,6 +23,8 @@ import { ui2amount } from 'src/functions/token_deciaml_convert';
 import BN from 'bn.js';
 import { FEE_ACCOUNT } from 'stores/constants';
 import { useGlobalStore } from 'stores/globalStore';
+import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
+import { get_token_amount_wallet, userTokenStore } from 'stores/userTokenStore';
 
 const q = useQuasar();
 const props = defineProps(['exchange_amount']);
@@ -30,6 +33,23 @@ async function buildTransaction() {
   const ws = useWorkspace();
   const { sendTransaction } = useWallet();
   const pg_escrow = ws?.pg_escrow;
+
+  if (
+    get_token_amount_wallet(
+      useEscrowStore().escrow_selected?.account.requestToken.toString() ?? '',
+    ) < props.exchange_amount
+  ) {
+    console.log('BBB');
+    q.notify({
+      message: `You dont have enough '${useGlobalStore().token_list.find(
+        (t) =>
+          t.address ==
+          useEscrowStore().escrow_selected?.account.requestToken.toString(),
+      )?.name}' to fill the trade!`,
+      color: 'info',
+    });
+    return;
+  }
 
   let notification_process = q.notify({
     group: false,
@@ -41,6 +61,12 @@ async function buildTransaction() {
   try {
     if (useEscrowStore().escrow_selected) {
       let transaction = new Transaction();
+
+      // transaction.add(
+      //   ComputeBudgetProgram.setComputeUnitLimit({
+      //     units: 70000,
+      //   }),
+      // );
 
       const seed = useEscrowStore().escrow_selected!.account.seed;
       const creator = useEscrowStore().escrow_selected!.account.maker;
@@ -166,14 +192,36 @@ async function buildTransaction() {
         .transaction();
 
       if (escrow_transaction) transaction.add(escrow_transaction);
+
+      // const units = await getSimulationComputeUnits(
+      //   useGlobalStore().connection as Connection,
+      //   transaction.instructions,
+      //   useWallet().publicKey.value ?? new PublicKey(''),
+      //   [],
+      // );
+
+      // console.log(units);
+
       const signature = await sendTransaction(
         transaction,
         useGlobalStore().connection as Connection,
       );
 
+      await waitForTransactionConfirmation(
+        useGlobalStore().connection as Connection,
+        signature,
+      );
+
       console.log(signature);
     }
-  } catch (err) {
+  } catch (err: any) {
+    notification_process({
+      type: 'negative',
+      icon: 'error',
+      spinner: false,
+      message: err.toString(),
+      timeout: 5000,
+    });
     console.error(err);
   }
 }

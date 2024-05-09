@@ -24,7 +24,7 @@
     "@solana-suite/core": "^0.6.8",
     "@solana/spl-token": "^0.3.8",
     "@solana/wallet-adapter-wallets": "^0.19.23",
-    "@solana/web3.js": "^1.87.3",
+    "@solana/web3.js": "^1.91.8",
     "@staratlas/factory": "^0.6.0",
     "@vueuse/core": "^10.6.1",
     "axios": "^1.2.1",
