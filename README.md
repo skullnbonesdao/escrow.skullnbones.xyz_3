@@ -1,6 +1,6 @@
-# dApp (dapp-web)
+# Escrow (Escrow-Service-WebUI)
 
-dApp SnB Dev
+A web UI for a Solana escrow service
 
 ## Install the dependencies
 ```bash
