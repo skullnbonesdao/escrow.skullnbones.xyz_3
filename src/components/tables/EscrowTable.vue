@@ -16,6 +16,8 @@ const decimals = 9;
 
 const sort_tab = ref('buy_name');
 
+const current_path = useRoute().path;
+
 const columns = [
   {
     name: 'tokens',
@@ -55,7 +57,7 @@ watch(
 function make_take_view(escrow: I_Escrows) {
   useEscrowStore().escrow_selected = escrow;
 
-  if (useRoute().path == 'manage') {
+  if (current_path.includes('exchange')) {
     useGlobalStore().showRightDrawer = true;
   }
   /*  if (expandable.value) {
@@ -89,11 +91,12 @@ function make_take_view(escrow: I_Escrows) {
     }"
   >
     <template v-slot:top>
-      <div class="row full-width items-center">
-        <div class="col text-subtitle1">Sort by</div>
+      <div class="row full-width items-center q-gutter-x-md">
+        <q-space class="col" />
+        <div class="text-subtitle1">Sort by:</div>
         <div>
           <q-tabs
-            v-model="sort_tab"
+            v-model="useEscrowStore().sort_direction"
             dense
             align="justify"
             class="bg-primary text-white"

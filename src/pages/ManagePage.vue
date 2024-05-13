@@ -17,7 +17,7 @@ const tab = ref('create');
     <q-tabs
       v-model="tab"
       inline-label
-      class="bg-primary text-white"
+      class="bg-dark text-white"
       align="justify"
     >
       <q-tab name="create" icon="add_circle" label="Create" to="/mails" />

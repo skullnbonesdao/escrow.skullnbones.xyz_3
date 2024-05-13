@@ -56,6 +56,13 @@ watch(
   },
 );
 
+watch(
+  () => useEscrowStore().sort_direction,
+  () => {
+    apply_filter();
+  },
+);
+
 function apply_filter() {
   useEscrowStore().escrows_filtered = useEscrowStore().escrows?.filter(
     (escrow) => {
@@ -135,16 +142,30 @@ function apply_filter() {
       );
   }
 
-  useEscrowStore().escrows_filtered = useEscrowStore().escrows_filtered?.sort(
-    (a, b) => {
-      if (a.account.price < b.account.price) {
-        return -1;
-      } else if (a.account.price > b.account.price) {
-        return 1;
-      }
-      return 0;
-    },
-  );
+  switch (useEscrowStore().sort_direction) {
+    case 'buy_ppu':
+      useEscrowStore().escrows_filtered =
+        useEscrowStore().escrows_filtered?.sort((a, b) => {
+          if (1 / a.account.price < 1 / b.account.price) {
+            return -1;
+          } else if (1 / a.account.price > 1 / b.account.price) {
+            return 1;
+          }
+          return 0;
+        });
+      break;
+    case 'sell_ppu':
+      useEscrowStore().escrows_filtered =
+        useEscrowStore().escrows_filtered?.sort((a, b) => {
+          if (a.account.price < b.account.price) {
+            return -1;
+          } else if (a.account.price > b.account.price) {
+            return 1;
+          }
+          return 0;
+        });
+      break;
+  }
 }
 </script>
 

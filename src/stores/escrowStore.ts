@@ -25,6 +25,7 @@ export interface NewEscrowState {
 
 export const useEscrowStore = defineStore('escrowStore', {
   state: () => ({
+    sort_direction: 'sell_ppu',
     new_escrow: {
       only_recipient: false,
       has_expire: false,
