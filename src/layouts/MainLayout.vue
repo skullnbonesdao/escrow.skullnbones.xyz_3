@@ -1,16 +1,20 @@
 <template>
   <q-layout view="hHh lpr fFf">
     <q-header class="bg-dark" height-hint="100">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <q-img src="logo.svg" />
-          </q-avatar>
-          Escrow Service
-        </q-toolbar-title>
-        <q-space />
-        <WalletMultiButton dark />
+      <q-toolbar class="row justify-center">
+        <q-btn square no-caps to="/" class="justify-center">
+          <q-toolbar-title>
+            <q-avatar>
+              <q-img src="logo.svg" />
+            </q-avatar>
+            Escrow Service
+          </q-toolbar-title>
+        </q-btn>
       </q-toolbar>
+
+      <div class="absolute" style="top: 0px; right: -0px">
+        <WalletMultiButton class="col" dark />
+      </div>
 
       <q-tabs align="left" inline-label>
         <q-route-tab icon="countertops" to="/exchange" label="Exchange" />
