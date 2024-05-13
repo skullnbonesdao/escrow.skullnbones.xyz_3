@@ -113,7 +113,7 @@ function make_take_view(escrow: I_Escrows) {
         <q-td key="tokens" :props="props">
           <div class="q-gutter-y-xs">
             <div class="row items-center justify-around no-wrap">
-              <q-badge label="Takes" color="red" outline />
+              <q-badge label="SELL" color="red" outline />
               <q-space />
 
               <div class="q-mx-sm text-subtitle1">
@@ -127,7 +127,7 @@ function make_take_view(escrow: I_Escrows) {
               />
             </div>
             <div class="row items-center justify-around no-wrap">
-              <q-badge label="Gives" color="green" outline />
+              <q-badge label="BUY" color="green" outline />
               <q-space />
 
               <div class="q-mx-sm text-subtitle1">

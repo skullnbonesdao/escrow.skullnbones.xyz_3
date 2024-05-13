@@ -3,7 +3,7 @@ import EscrowTable from 'components/tables/EscrowTable.vue';
 import { onMounted } from 'vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import { useGlobalStore } from 'stores/globalStore';
-import { useWallet } from 'solana-wallets-vue';
+import { useWallet, WalletMultiButton } from 'solana-wallets-vue';
 
 onMounted(() => {
   useEscrowStore().escrows_filtered = useEscrowStore().escrows?.filter(
@@ -20,7 +20,13 @@ onMounted(() => {
       <p class="text-center text-h4 text-uppercase">Cancel/Close Escrow</p>
     </q-card-section>
     <q-card-section>
-      <EscrowTable />
+      <div
+        v-if="!useWallet().publicKey.value"
+        class="row justify-center bg-secondary"
+      >
+        <WalletMultiButton dark />
+      </div>
+      <EscrowTable v-else />
     </q-card-section>
   </q-card>
 </template>

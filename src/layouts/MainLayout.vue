@@ -91,16 +91,16 @@
 
           <div class="col text-right text-subtitle2">v{{ v }}</div>
           <div class="">
-            <q-btn flat class="q-mx-sm" round to="/settings">
-              <q-avatar size="30px">
-                <q-icon name="settings" />
-              </q-avatar>
-            </q-btn>
-            <q-btn flat class="q-mx-sm" round @click="useQuasar().dark.toggle">
-              <q-avatar size="30px">
-                <q-icon name="info" />
-              </q-avatar>
-            </q-btn>
+            <!--            <q-btn flat class="q-mx-sm" round to="/settings">-->
+            <!--              <q-avatar size="30px">-->
+            <!--                <q-icon name="settings" />-->
+            <!--              </q-avatar>-->
+            <!--            </q-btn>-->
+            <!--            <q-btn flat class="q-mx-sm" round @click="useQuasar().dark.toggle">-->
+            <!--              <q-avatar size="30px">-->
+            <!--                <q-icon name="info" />-->
+            <!--              </q-avatar>-->
+            <!--            </q-btn>-->
           </div>
         </q-toolbar-title>
       </q-toolbar>
