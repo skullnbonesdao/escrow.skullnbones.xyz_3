@@ -23,7 +23,7 @@ export const useGlobalStore = defineStore('globalStore', {
       this.update_connection();
     },
     update_connection() {
-      console.log('RPC is set to: ' + this.rpc_selected.url);
+      console.log('RPC is set to: ' + this.rpc_selected.name);
       this.connection = new Connection(this.rpc_selected.url, {
         commitment: 'confirmed',
       });
