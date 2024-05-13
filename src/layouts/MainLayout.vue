@@ -68,6 +68,7 @@
     </q-drawer>
 
     <q-page-container>
+      <DisclaimerDialog class="col-1" />
       <router-view class="bg-gradient" />
     </q-page-container>
 
@@ -118,6 +119,7 @@ import EscrowTakeView from 'components/views/EscrowTakeView.vue';
 import { format_address } from '../functions/format_address';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
+import DisclaimerDialog from 'components/dialogs/DisclaimerDialog.vue';
 
 const v = version;
 
