@@ -54,8 +54,10 @@ watch(
 
 function make_take_view(escrow: I_Escrows) {
   useEscrowStore().escrow_selected = escrow;
-  useGlobalStore().showRightDrawer = true;
 
+  if (useRoute().path == 'manage') {
+    useGlobalStore().showRightDrawer = true;
+  }
   /*  if (expandable.value) {
     if (
       useEscrowStore().escrow_selected?.publicKey.toString() ==
@@ -149,7 +151,7 @@ function make_take_view(escrow: I_Escrows) {
                   10 **
                     -useGlobalStore().token_list.find(
                       (t) => t.address == props.row.account.depositToken,
-                    ).decimals
+                    )?.decimals
                 "
               />
 
@@ -168,7 +170,7 @@ function make_take_view(escrow: I_Escrows) {
                   10 **
                     -useGlobalStore().token_list.find(
                       (t) => t.address == props.row.account.depositToken,
-                    ).decimals
+                    )?.decimals
                 "
               />
 

@@ -15,7 +15,6 @@ onMounted(() => {
 
 <template>
   <q-page class="row items-center justify-evenly q-pa-xl">
-    {{ get_token_amount_wallet('ZEUS1aR7aX8DFFJf5QjWj2ftDDdNTroMNGo8YoQm3Gq') }}
     <div class="q-gutter-y-xl">
       <div>
         <p class="text-h1">Escrow Service</p>
