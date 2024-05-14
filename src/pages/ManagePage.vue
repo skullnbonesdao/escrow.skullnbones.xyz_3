@@ -18,7 +18,7 @@ const tab = ref('create');
       <q-tab name="create" icon="add_circle" label="Create" />
       <q-tab name="edit" icon="cancel" label="Cancel/Close" />
     </q-tabs>
-    <div class="row items-center justify-evenly q-ma-sm">
+    <div class="row items-center justify-evenly q-pa-sm">
       <CreateEscrowView v-if="tab == 'create'" />
       <EditEscrowView v-if="tab == 'edit'" />
     </div>
