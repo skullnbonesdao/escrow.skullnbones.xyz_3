@@ -199,6 +199,12 @@ async function buildTransaction() {
     <WalletMultiButton dark />
   </div>
   <q-btn
+    :disable="
+      !useEscrowStore().new_escrow.request_token ||
+      !useEscrowStore().new_escrow.deposit_token ||
+      useEscrowStore().new_escrow.request_amount <= 0 ||
+      useEscrowStore().new_escrow.deposit_amount <= 0
+    "
     @click="buildTransaction().then(() => {})"
     v-else
     class="full-width"

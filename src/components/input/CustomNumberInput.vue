@@ -2,8 +2,17 @@
 import { computed, ref, watch } from 'vue';
 import { format } from 'v-money3';
 import TokenIcon from 'components/elements/TokenIcon.vue';
+import { userTokenStore } from 'stores/userTokenStore';
 
 const props = defineProps({
+  side: {
+    type: String,
+    default: '',
+  },
+  mint: {
+    type: String,
+    default: '',
+  },
   init_value: {
     type: Number,
     default: 0,
@@ -87,6 +96,13 @@ const value_formatted = computed({
     reverse-fill-mask
     v-model="value_formatted"
     input-class="text-right"
+    :rules="[
+      (val) =>
+        userTokenStore().accounts.find(
+          (acc) => acc.account.data.parsed.info.mint == props.mint,
+        )?.account.data.parsed.info.tokenAmount.uiAmount > val ||
+        (side == 'offer' ? 'You have insufficient tokens!' : true),
+    ]"
     label="Amount"
   >
     <template v-slot:append>

@@ -74,7 +74,10 @@ watch(
         :init_value="token_input"
         @token_change="(value: I_Token) => (token = value)"
       />
+
       <CustomNumberInput
+        :mint="token?.address ?? ''"
+        :side="side"
         :init_value="amount"
         :logo-u-r-i="token?.logoURI ?? 'unknown.png'"
         :precision="token?.decimals"

@@ -99,11 +99,10 @@ function make_take_view(escrow: I_Escrows) {
             v-model="useEscrowStore().sort_direction"
             dense
             align="justify"
-            class="bg-primary text-white"
             :breakpoint="0"
           >
-            <q-tab name="buy_ppu" label="buy ppU" />
-            <q-tab name="sell_ppu" label="sell ppU" />
+            <q-tab name="buy_ppu" no-caps label="Buy Price" />
+            <q-tab name="sell_ppu" no-caps label="Sell Price" />
           </q-tabs>
         </div>
       </div>
