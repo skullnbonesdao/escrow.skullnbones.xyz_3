@@ -11,7 +11,7 @@ onMounted(() => {
 </script>
 <template>
   <q-page class="row">
-    <q-scroll-area class="col q-ma-sm">
+    <q-scroll-area class="col q-ma-xs">
       <EscrowTable v-if="useGlobalStore().is_init" />
     </q-scroll-area>
   </q-page>
