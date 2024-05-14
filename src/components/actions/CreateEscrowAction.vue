@@ -104,7 +104,7 @@ async function buildTransaction() {
       );
     }
 
-    const recipient = useEscrowStore().new_escrow.recipient_address
+    const recipient = useEscrowStore().new_escrow.only_recipient
       ? useEscrowStore().new_escrow.recipient_address
       : null;
 

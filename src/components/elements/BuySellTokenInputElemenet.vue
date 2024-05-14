@@ -70,11 +70,12 @@ watch(
       <TokenSelectInput
         v-if="type != 'take'"
         class="col"
+        :show_only_available="side == 'offer'"
         :init_value="token_input"
         @token_change="(value: I_Token) => (token = value)"
       />
       <CustomNumberInput
-        :init_value="props.token_amount"
+        :init_value="amount"
         :logo-u-r-i="token?.logoURI ?? 'unknown.png'"
         :precision="token?.decimals"
         @valueChange="(value: number) => (amount = value)"

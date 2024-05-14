@@ -63,7 +63,7 @@ const value = ref(
 const value_formatted = computed({
   // getter
   get() {
-    return format(value.value, config.value);
+    return props.init_value.toString();
   },
   // setter
   set(newValue) {
@@ -81,7 +81,7 @@ const value_formatted = computed({
 <template>
   <q-input
     :disable="logoURI.includes('unknown')"
-    debounce="1000"
+    debounce="5000"
     filled
     square
     reverse-fill-mask

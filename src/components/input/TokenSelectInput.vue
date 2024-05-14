@@ -5,7 +5,7 @@ import TokenIcon from 'components/elements/TokenIcon.vue';
 import { userTokenStore } from '../../stores/userTokenStore';
 
 const emits = defineEmits(['token_change']);
-const props = defineProps(['dense', 'init_value']);
+const props = defineProps(['dense', 'init_value', 'show_only_available']);
 
 const model = ref(props.init_value);
 const options = ref(useGlobalStore().token_list);
@@ -27,6 +27,17 @@ function filterFn(val, update) {
           const needle = val.toLowerCase();
           options.value = useGlobalStore().token_list.filter(
             (v) => v.name.toLowerCase().indexOf(needle) > -1,
+          );
+        }
+
+        if (props.show_only_available) {
+          options.value = options.value.filter(
+            (option) =>
+              userTokenStore().accounts.find(
+                (acc) =>
+                  acc.account.data.parsed.info.mint.toString() ==
+                  option.address.toString(),
+              )?.account.data.parsed.info.tokenAmount.uiAmount > 0,
           );
         }
       },
