@@ -14,14 +14,9 @@ const tab = ref('create');
 
 <template>
   <q-page>
-    <q-tabs
-      v-model="tab"
-      inline-label
-      class="bg-dark text-white"
-      align="justify"
-    >
-      <q-tab name="create" icon="add_circle" label="Create" to="/mails" />
-      <q-tab name="edit" icon="close" label="Cancel" to="/alarms" />
+    <q-tabs v-model="tab" class="bg-dark text-white" align="justify">
+      <q-tab name="create" icon="add_circle" label="Create" />
+      <q-tab name="edit" icon="cancel" label="Cancel/Close" />
     </q-tabs>
     <div class="row items-center justify-evenly q-ma-sm">
       <CreateEscrowView v-if="tab == 'create'" />
