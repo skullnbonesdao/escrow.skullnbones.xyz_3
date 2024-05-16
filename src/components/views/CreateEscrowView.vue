@@ -16,7 +16,8 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
     </q-card-section>
 
     <q-separator />
-
+    {{ useEscrowStore().new_escrow.deposit_amount }}
+    {{ useEscrowStore().new_escrow.request_amount }}
     <q-card-section class="row q-gutter-x-md">
       <BuySellTokenInputElemenet
         side="offer"
@@ -28,7 +29,9 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
         "
         @amountChange="
           (value: number) =>
-            (useEscrowStore().new_escrow.deposit_amount = value)
+            (useEscrowStore().new_escrow.deposit_amount = parseFloat(
+              value.toString().replace(',', ''),
+            ))
         "
       />
 
@@ -42,7 +45,9 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
         "
         @amountChange="
           (value: number) =>
-            (useEscrowStore().new_escrow.request_amount = value)
+            (useEscrowStore().new_escrow.request_amount = parseFloat(
+              value.toString().replace(',', ''),
+            ))
         "
       />
     </q-card-section>
