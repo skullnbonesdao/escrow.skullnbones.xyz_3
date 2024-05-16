@@ -92,7 +92,7 @@ const sufficient_tokens = computed(() => {
       userTokenStore().accounts.find(
         (acc) => acc.account.data.parsed.info.mint == props.mint,
       )?.account.data.parsed.info.tokenAmount.uiAmount >=
-      value_formatted.value.toString().replace(',', '')
+      parseFloat(value_formatted.value.toString().replace(',', ''))
     );
   } else return true;
 });

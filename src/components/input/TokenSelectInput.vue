@@ -89,7 +89,9 @@ function abortFilterFn() {
         <q-item-section>
           <div class="row">
             <div class="col">
-              <q-item-label>{{ scope.opt.name }}</q-item-label>
+              <q-item-label
+                >{{ scope.opt.name }} [{{ scope.opt.symbol }}]</q-item-label
+              >
               <q-item-label caption>{{ scope.opt.address }}</q-item-label>
             </div>
             <div class="col text-right">
