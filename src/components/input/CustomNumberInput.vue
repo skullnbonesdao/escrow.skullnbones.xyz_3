@@ -85,6 +85,17 @@ const value_formatted = computed({
     emits('valueChange', format(value.value, config.value));
   },
 });
+
+const sufficient_tokens = computed(() => {
+  if (parseFloat(value_formatted.value.replace(',', '')) > 0) {
+    return (
+      userTokenStore().accounts.find(
+        (acc) => acc.account.data.parsed.info.mint == props.mint,
+      )?.account.data.parsed.info.tokenAmount.uiAmount >=
+      value_formatted.value.toString().replace(',', '')
+    );
+  } else return true;
+});
 </script>
 
 <template>
@@ -98,9 +109,7 @@ const value_formatted = computed({
     input-class="text-right"
     :rules="[
       (val) =>
-        userTokenStore().accounts.find(
-          (acc) => acc.account.data.parsed.info.mint == props.mint,
-        )?.account.data.parsed.info.tokenAmount.uiAmount > val ||
+        sufficient_tokens ||
         (side == 'offer' ? 'You have insufficient tokens!' : true),
     ]"
     label="Amount"

@@ -47,6 +47,7 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
       />
     </q-card-section>
 
+    <q-separator />
     <q-card-section>
       <q-btn-group flat class="row full-width items-center">
         <div class="col-2 text-h6 text-center">Price</div>
@@ -147,8 +148,9 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
         </div>
       </q-btn-group>
     </q-card-section>
+    <q-separator />
 
-    <q-card-section> <EscrowConfigList /> </q-card-section>
+    <q-card-section class="q-pa-none"> <EscrowConfigList /> </q-card-section>
 
     <q-separator />
 
