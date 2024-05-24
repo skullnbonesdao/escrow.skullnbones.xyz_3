@@ -21,10 +21,11 @@ import {
 } from 'src/functions/check_and_make_ata';
 import { ui2amount } from 'src/functions/token_deciaml_convert';
 import BN from 'bn.js';
-import { FEE_ACCOUNT } from 'stores/constants';
+import { FEE_ACCOUNT, WHITELIST_PROGRAM_ID } from 'stores/constants';
 import { useGlobalStore } from 'stores/globalStore';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
 import { get_token_amount_wallet, userTokenStore } from 'stores/userTokenStore';
+import { useWhitelistStore } from 'stores/whitelistStore';
 
 const q = useQuasar();
 const props = defineProps(['exchange_amount']);
@@ -167,6 +168,12 @@ async function buildTransaction() {
       let whitelistProgram = null;
       let whitelist = null;
       let entry = null;
+
+      if (useWhitelistStore().is_whitelisted) {
+        whitelistProgram = WHITELIST_PROGRAM_ID;
+        whitelist = useWhitelistStore().whitelist_account;
+        entry = useWhitelistStore().entry_account;
+      }
 
       let escrow_transaction = await pg_escrow?.value.methods
         .exchange(new BN(exchange_amount))

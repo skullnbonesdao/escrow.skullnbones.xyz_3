@@ -6,6 +6,8 @@ import EscrowDetails from 'components/elements/EscrowDetails.vue';
 import ExchangeEscrowAction from 'components/actions/ExchangeEscrowAction.vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import { I_Token } from 'stores/interfaces/I_TokenList';
+import { ACCOUNT_COST_ESCROW, MAKER_FEE, TAKER_FEE } from 'stores/constants';
+import { useWhitelistStore } from 'stores/whitelistStore';
 
 const token_deposit_info = computed(() => {
   return useGlobalStore().token_list.find(
@@ -73,8 +75,8 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
       amount_to_sell.value =
         other * (useEscrowStore().escrow_selected?.account.price ?? 0);
   }
-  console.log(`Amount_to_buy ${amount_to_buy.value}`);
-  console.log(`amount_to_sell ${amount_to_sell.value}`);
+  console.log(`Amount_to_buy= ${amount_to_buy.value}`);
+  console.log(`amount_to_sell= ${amount_to_sell.value}`);
 }
 </script>
 
@@ -323,8 +325,22 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
 
     <q-card-section class="">
       <ExchangeEscrowAction :exchange_amount="amount_to_buy" />
+      <div class="col row justify-end q-gutter-sm items-center q-mt-sm">
+        <p class="text-right text-weight-thin">Fee</p>
+        <q-space />
 
-      <p class="text-right q-mt-sm text-weight-thin">Fee: FEEXXX sol</p>
+        <p class="text-right text-weight-thin">
+          {{ useWhitelistStore().is_whitelisted ? TAKER_FEE / 2 : TAKER_FEE }}
+        </p>
+
+        <q-avatar size="xs">
+          <img
+            src="currencies/SOL.webp
+
+                "
+          />
+        </q-avatar>
+      </div>
     </q-card-section>
   </q-card>
 </template>

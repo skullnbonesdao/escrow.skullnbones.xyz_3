@@ -7,9 +7,14 @@ import { useEscrowStore } from 'stores/escrowStore';
 import EscrowConfigList from 'components/elements/EscrowConfigList.vue';
 import CreateEscrow from 'components/actions/CreateEscrowAction.vue';
 import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
-import { ACCOUNT_COST_ESCROW, MAKER_FEE } from '../../stores/constants';
+import {
+  ACCOUNT_COST_ESCROW,
+  MAKER_FEE,
+  TAKER_FEE,
+} from '../../stores/constants';
 import { useWhitelistStore } from '../../stores/whitelistStore';
 import { format_number } from '../../functions/format_number';
+import ExchangeEscrowAction from 'components/actions/ExchangeEscrowAction.vue';
 </script>
 
 <template>
@@ -165,7 +170,7 @@ import { format_number } from '../../functions/format_number';
 
     <q-card-section>
       <q-btn-group flat class="full-width">
-        <div class="col">
+        <div class="col q-gutter-y-xs q-gutter-x-sm">
           <div class="text-left text-h6">Wallet balance changes</div>
 
           <div class="col row justify-end q-gutter-sm items-center">
@@ -191,14 +196,12 @@ import { format_number } from '../../functions/format_number';
           <div class="col row justify-end q-gutter-sm items-center">
             <p class="text-right text-weight-thin">Buying-Token</p>
             <q-space />
-            <p class="text-right text-weight-thin text-yellow-14">
-              (after fulfilment)
-            </p>
+            <p class="text-right text-weight-thin">(after fulfilment)</p>
             <q-space />
 
-            <p class="text-bold text-yellow-14">
-              -{{ useEscrowStore().new_escrow.request_amount }}
-              {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+            <p class="text-weight-thin text-yellow-14">
+              +{{ useEscrowStore().new_escrow.request_amount }}
+              {{ useEscrowStore().new_escrow.request_token?.symbol }}
             </p>
 
             <q-avatar size="xs" color="white">
@@ -211,32 +214,29 @@ import { format_number } from '../../functions/format_number';
               />
             </q-avatar>
           </div>
-
-          <div class="q-mt-sm col row justify-end q-gutter-sm items-center">
-            <p class="text-right text-weight-thin">Accounts + Fee</p>
-            <q-space />
-
-            <p class="text-right text-weight-thin">
-              {{ ACCOUNT_COST_ESCROW }} +
-              {{
-                useWhitelistStore().is_whitelisted ? MAKER_FEE / 2 : MAKER_FEE
-              }}
-            </p>
-
-            <q-avatar size="xs">
-              <img
-                src="currencies/SOL.webp
-
-                "
-              />
-            </q-avatar>
-          </div>
         </div>
       </q-btn-group>
     </q-card-section>
     <q-separator />
-    <q-card-section class="q-gutter-y-sm">
+    <q-card-section class="">
       <CreateEscrowAction />
+      <div class="col row justify-end q-gutter-sm items-center q-mt-sm">
+        <p class="text-right text-weight-thin">Accounts (recoverable) + Fee</p>
+        <q-space />
+
+        <p class="text-right text-weight-thin">
+          {{ ACCOUNT_COST_ESCROW }} +
+          {{ useWhitelistStore().is_whitelisted ? MAKER_FEE / 2 : MAKER_FEE }}
+        </p>
+
+        <q-avatar size="xs">
+          <img
+            src="currencies/SOL.webp
+
+                "
+          />
+        </q-avatar>
+      </div>
     </q-card-section>
   </q-card>
 </template>
