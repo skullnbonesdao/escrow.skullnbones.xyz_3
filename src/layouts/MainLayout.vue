@@ -1,8 +1,11 @@
 <template>
   <q-layout view="hHh lpr fFf">
     <q-header class="bg-dark" height-hint="100">
-      <q-toolbar class="row justify-center">
-        <q-btn square no-caps to="/" class="justify-center">
+      <q-toolbar
+        class="row justify-center"
+        :class="useWhitelistStore().is_whitelisted ? 'bg-primary' : ''"
+      >
+        <q-btn flat square no-caps to="/" class="justify-center">
           <q-toolbar-title>
             <q-avatar>
               <q-img src="logo.svg" />
@@ -120,6 +123,7 @@ import { format_address } from '../functions/format_address';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
 import DisclaimerDialog from 'components/dialogs/DisclaimerDialog.vue';
+import { useWhitelistStore } from '../stores/whitelistStore';
 
 const v = version;
 

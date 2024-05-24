@@ -11,6 +11,7 @@ import 'src/css/background.css';
 import { useEscrowStore } from 'stores/escrowStore';
 import { userTokenStore } from 'stores/userTokenStore';
 import { useWallet } from 'solana-wallets-vue';
+import { useWhitelistStore } from 'stores/whitelistStore';
 
 defineOptions({
   name: 'App',
@@ -30,6 +31,7 @@ watch(
   () => useWallet().publicKey.value,
   async () => {
     await userTokenStore().load_token_accounts();
+    await useWhitelistStore().prepare_whitelisted();
   },
 );
 
