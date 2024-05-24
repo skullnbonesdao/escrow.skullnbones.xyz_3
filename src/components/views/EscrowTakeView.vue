@@ -8,6 +8,8 @@ import { useEscrowStore } from 'stores/escrowStore';
 import { I_Token } from 'stores/interfaces/I_TokenList';
 import { ACCOUNT_COST_ESCROW, MAKER_FEE, TAKER_FEE } from 'stores/constants';
 import { useWhitelistStore } from 'stores/whitelistStore';
+import { format_number } from 'src/functions/format_number';
+import TokenIcon from 'components/elements/TokenIcon.vue';
 
 const token_deposit_info = computed(() => {
   return useGlobalStore().token_list.find(
@@ -137,50 +139,104 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
     </q-list>
 
     <q-card-section class="">
-      <q-btn-group class="full-width q-pa-sm">
-        <div class="row full-width items-center">
-          <div class="text-h6">Price</div>
+      <q-btn-group flat class="row full-width items-center">
+        <div class="col-2 text-h6 text-center">Price</div>
 
-          <div class="col">
-            <div class="row q-gutter-x-sm">
-              <div class="col text-right items-center">
-                {{
-                  useEscrowStore().escrow_selected?.account.price.toFixed(10) ??
-                  0
-                }}
-              </div>
-
-              <q-avatar size="xs" color="white">
-                <q-img
-                  :src="
-                    useGlobalStore().token_list.find(
-                      (token) =>
-                        token.address ==
-                        useEscrowStore().escrow_selected?.account.requestToken.toString(),
-                    )?.logoURI ?? 'unknown.png'
-                  "
-                />
-              </q-avatar>
+        <div class="col q-mr-sm">
+          <div class="row items-center">
+            <q-space />
+            <div class="col row justify-center">
+              <p>
+                1
+                {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+              </p>
+              <TokenIcon
+                class="q-ml-xs"
+                size="xs"
+                :src="
+                  useGlobalStore().token_list.find(
+                    (token) =>
+                      token.address ==
+                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                  )?.logoURI ?? 'unknown.png'
+                "
+              />
             </div>
-            <div class="row q-gutter-x-sm">
-              <div class="col text-right items-center">
+
+            <q-icon
+              size="md"
+              name="swap_vert"
+              style="transform: rotate(90deg)"
+            />
+            <div class="col row justify-end">
+              <div>
                 {{
-                  (
-                    1 / (useEscrowStore().escrow_selected?.account.price ?? 0)
-                  ).toFixed(10)
+                  format_number(
+                    useEscrowStore().escrow_selected?.account.price ?? 0,
+                    10,
+                  )
                 }}
+                {{ useEscrowStore().new_escrow.request_token?.symbol }}
               </div>
-              <q-avatar size="xs" color="white">
-                <q-img
-                  :src="
-                    useGlobalStore().token_list.find(
-                      (token) =>
-                        token.address ==
-                        useEscrowStore().escrow_selected?.account.depositToken.toString(),
-                    )?.logoURI ?? 'unknown.png'
-                  "
-                />
-              </q-avatar>
+              <TokenIcon
+                class="q-ml-xs"
+                size="xs"
+                :src="
+                  useGlobalStore().token_list.find(
+                    (token) =>
+                      token.address ==
+                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                  )?.logoURI ?? 'unknown.png'
+                "
+              />
+            </div>
+          </div>
+          <div class="row items-center">
+            <q-space />
+            <div class="col row justify-center">
+              <div>
+                1
+                {{ useEscrowStore().new_escrow.request_token?.symbol }}
+              </div>
+              <TokenIcon
+                class="q-ml-xs"
+                size="xs"
+                :src="
+                  useGlobalStore().token_list.find(
+                    (token) =>
+                      token.address ==
+                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                  )?.logoURI ?? 'unknown.png'
+                "
+              />
+            </div>
+            <q-icon
+              size="md"
+              name="swap_vert"
+              style="transform: rotate(90deg)"
+            />
+            <div class="col row justify-end">
+              <div>
+                {{
+                  format_number(
+                    1 / (useEscrowStore().escrow_selected?.account.price ?? 0),
+                    10,
+                  )
+                }}
+
+                {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+              </div>
+              <TokenIcon
+                class="q-ml-xs"
+                size="xs"
+                :src="
+                  useGlobalStore().token_list.find(
+                    (token) =>
+                      token.address ==
+                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                  )?.logoURI ?? 'unknown.png'
+                "
+              />
             </div>
           </div>
         </div>
@@ -191,7 +247,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
       class="q-gutter-y-sm"
     >
       <BuySellTokenInputElemenet
-        side="Takes"
+        side="takes"
         type="take"
         class="full-width"
         :token_amount="amount_to_sell"
@@ -199,14 +255,14 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
         :disable="!useEscrowStore().escrow_selected?.account.allowPartialFill"
         @amountChange="
           (value) => {
-            amount_to_sell = value;
+            amount_to_sell = parseFloat(value.toString().replace(',', ''));
             calculate_side('buy', value);
           }
         "
       />
-      <div class="row justify-center">
-        <q-icon size="md" name="swap_vert"></q-icon>
-      </div>
+      <!--      <div class="row justify-center">-->
+      <!--        <q-icon size="md" name="swap_vert"></q-icon>-->
+      <!--      </div>-->
 
       <BuySellTokenInputElemenet
         side="gives"
@@ -217,13 +273,13 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
         :disable="!useEscrowStore().escrow_selected?.account.allowPartialFill"
         @amountChange="
           (value) => {
-            amount_to_buy = value;
+            amount_to_buy = parseFloat(value.toString().replace(',', ''));
             calculate_side('sell', value);
           }
         "
       />
 
-      <q-btn-group class="full-width q-pa-sm">
+      <q-btn-group flat class="full-width q-pa-sm">
         <div class="col">
           <div class="row items-center">
             <q-slider
@@ -292,7 +348,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
     </q-card-section>
 
     <q-card-section>
-      <q-btn-group class="full-width">
+      <q-btn-group flat class="full-width">
         <div class="col">
           <div class="text-center text-h6">Wallet balance changes</div>
           <q-separator />

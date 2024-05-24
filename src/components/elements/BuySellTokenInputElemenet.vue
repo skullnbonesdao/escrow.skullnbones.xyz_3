@@ -77,7 +77,7 @@ watch(
 </script>
 
 <template>
-  <q-btn-group class="col">
+  <q-btn-group class="col" flat>
     <div class="col">
       <div class="text-center text-h4 q-my-sm">
         <div class="">

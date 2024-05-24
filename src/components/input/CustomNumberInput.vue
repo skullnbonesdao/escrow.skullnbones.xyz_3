@@ -110,7 +110,9 @@ const sufficient_tokens = computed(() => {
     :rules="[
       (val) =>
         sufficient_tokens ||
-        (side == 'offer' ? 'You have insufficient tokens!' : true),
+        (side.toLowerCase().includes('offer' || 'takes')
+          ? 'You have insufficient tokens!'
+          : true),
     ]"
     label="Amount"
   >

@@ -82,7 +82,11 @@ import ExchangeEscrowAction from 'components/actions/ExchangeEscrowAction.vue';
               />
             </div>
 
-            <q-icon size="md" name="arrow_right_alt" />
+            <q-icon
+              size="md"
+              name="swap_vert"
+              style="transform: rotate(90deg)"
+            />
             <div class="col row justify-end">
               <div>
                 {{
@@ -128,7 +132,11 @@ import ExchangeEscrowAction from 'components/actions/ExchangeEscrowAction.vue';
                 "
               />
             </div>
-            <q-icon size="md" name="arrow_right_alt" />
+            <q-icon
+              size="md"
+              name="swap_vert"
+              style="transform: rotate(90deg)"
+            />
             <div class="col row justify-end">
               <div>
                 {{

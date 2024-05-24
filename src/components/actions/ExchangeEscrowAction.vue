@@ -46,7 +46,7 @@ async function buildTransaction() {
         (t) =>
           t.address ==
           useEscrowStore().escrow_selected?.account.requestToken.toString(),
-      )?.name}' to fill the trade!`,
+      )?.name}' to fill the offer!`,
       color: 'info',
     });
     return;
