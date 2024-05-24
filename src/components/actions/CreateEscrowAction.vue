@@ -22,6 +22,7 @@ import {
 import { FEE_ACCOUNT, WHITELIST_PROGRAM_ID } from 'stores/constants';
 import { useGlobalStore } from 'stores/globalStore';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
+import { useWhitelistStore } from 'stores/whitelistStore';
 
 const q = useQuasar();
 
@@ -112,11 +113,11 @@ async function buildTransaction() {
     let whitelist = null;
     let entry = null;
 
-    // if (useWalletStore().is_whitelisted) {
-    //   whitelistProgram = WHITELIST_PROGRAM_ID;
-    //   whitelist = useWalletStore().whitelist_account;
-    //   entry = useWalletStore().entry_account;
-    // }
+    if (useWhitelistStore().is_whitelisted) {
+      whitelistProgram = WHITELIST_PROGRAM_ID;
+      whitelist = useWhitelistStore().whitelist_account;
+      entry = useWhitelistStore().entry_account;
+    }
 
     console.info(useEscrowStore().new_escrow);
 
@@ -208,7 +209,7 @@ async function buildTransaction() {
     @click="buildTransaction().then(() => {})"
     v-else
     class="full-width"
-    label="Create"
+    :label="useWhitelistStore().is_whitelisted ? 'Create as Member' : 'Create'"
     color="secondary"
   >
   </q-btn>

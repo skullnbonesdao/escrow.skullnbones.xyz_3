@@ -7,6 +7,9 @@ import { useEscrowStore } from 'stores/escrowStore';
 import EscrowConfigList from 'components/elements/EscrowConfigList.vue';
 import CreateEscrow from 'components/actions/CreateEscrowAction.vue';
 import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
+import { ACCOUNT_COST_ESCROW, MAKER_FEE } from '../../stores/constants';
+import { useWhitelistStore } from '../../stores/whitelistStore';
+import { format_number } from '../../functions/format_number';
 </script>
 
 <template>
@@ -78,18 +81,19 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
             <div class="col row justify-end">
               <div>
                 {{
-                  (
+                  format_number(
                     parseFloat(
                       useEscrowStore()
                         .new_escrow.request_amount?.toString()
                         .replace(',', ''),
                     ) /
-                    parseFloat(
-                      useEscrowStore()
-                        .new_escrow.deposit_amount?.toString()
-                        .replace(',', ''),
-                    )
-                  ).toFixed(9)
+                      parseFloat(
+                        useEscrowStore()
+                          .new_escrow.deposit_amount?.toString()
+                          .replace(',', ''),
+                      ),
+                    9,
+                  )
                 }}
                 {{ useEscrowStore().new_escrow.request_token?.symbol }}
               </div>
@@ -123,18 +127,19 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
             <div class="col row justify-end">
               <div>
                 {{
-                  (
+                  format_number(
                     parseFloat(
                       useEscrowStore()
                         .new_escrow.deposit_amount?.toString()
                         .replace(',', ''),
                     ) /
-                    parseFloat(
-                      useEscrowStore()
-                        .new_escrow.request_amount?.toString()
-                        .replace(',', ''),
-                    )
-                  ).toFixed(9)
+                      parseFloat(
+                        useEscrowStore()
+                          .new_escrow.request_amount?.toString()
+                          .replace(',', ''),
+                      ),
+                    9,
+                  )
                 }}
 
                 {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
@@ -159,11 +164,13 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
     <q-separator />
 
     <q-card-section>
-      <q-btn-group flat class="full-width q-pa-sm">
+      <q-btn-group flat class="full-width">
         <div class="col">
           <div class="text-left text-h6">Wallet balance changes</div>
 
-          <div class="col row justify-end q-gutter-sm">
+          <div class="col row justify-end q-gutter-sm items-center">
+            <p class="text-right text-weight-thin">Selling-Token</p>
+
             <q-space />
 
             <p class="text-bold text-red">
@@ -173,9 +180,53 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
 
             <q-avatar size="xs" color="white">
               <img
+                width="100px"
                 :src="
                   useEscrowStore().new_escrow.deposit_token?.logoURI ??
                   'unknown.png'
+                "
+              />
+            </q-avatar>
+          </div>
+          <div class="col row justify-end q-gutter-sm items-center">
+            <p class="text-right text-weight-thin">Buying-Token</p>
+            <q-space />
+            <p class="text-right text-weight-thin text-yellow-14">
+              (after fulfilment)
+            </p>
+            <q-space />
+
+            <p class="text-bold text-yellow-14">
+              -{{ useEscrowStore().new_escrow.request_amount }}
+              {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+            </p>
+
+            <q-avatar size="xs" color="white">
+              <img
+                width="100px"
+                :src="
+                  useEscrowStore().new_escrow.request_token?.logoURI ??
+                  'unknown.png'
+                "
+              />
+            </q-avatar>
+          </div>
+
+          <div class="q-mt-sm col row justify-end q-gutter-sm items-center">
+            <p class="text-right text-weight-thin">Accounts + Fee</p>
+            <q-space />
+
+            <p class="text-right text-weight-thin">
+              {{ ACCOUNT_COST_ESCROW }} +
+              {{
+                useWhitelistStore().is_whitelisted ? MAKER_FEE / 2 : MAKER_FEE
+              }}
+            </p>
+
+            <q-avatar size="xs">
+              <img
+                src="currencies/SOL.webp
+
                 "
               />
             </q-avatar>
@@ -184,7 +235,7 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
       </q-btn-group>
     </q-card-section>
     <q-separator />
-    <q-card-section>
+    <q-card-section class="q-gutter-y-sm">
       <CreateEscrowAction />
     </q-card-section>
   </q-card>

@@ -72,7 +72,7 @@ const value = ref(
 const value_formatted = computed({
   // getter
   get() {
-    return props.init_value.toString();
+    return format(props.init_value.toString(), config.value);
   },
   // setter
   set(newValue) {
