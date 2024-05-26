@@ -242,6 +242,7 @@ async function buildTransaction() {
   </div>
   <q-btn
     v-else
+    icon="currency_exchange"
     color="secondary "
     class="full-width"
     label="Exchange"

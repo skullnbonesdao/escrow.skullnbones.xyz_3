@@ -22,6 +22,7 @@ import {
 } from 'src/functions/check_and_make_ata';
 
 const q = useQuasar();
+const props = defineProps(['label']);
 
 async function buildTransaction() {
   const ws = useWorkspace();
@@ -176,6 +177,7 @@ async function buildTransaction() {
     @click="buildTransaction().then(() => {})"
     v-else
     dense
+    :label="props.label"
     color="secondary"
     icon="highlight_off"
   >

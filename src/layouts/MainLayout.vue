@@ -1,11 +1,18 @@
 <template>
   <q-layout view="hHh lpr fFf">
-    <q-header class="bg-dark" height-hint="100">
+    <q-header class="bg-dark">
       <q-toolbar
-        class="row justify-center"
-        :class="useWhitelistStore().is_whitelisted ? 'bg-primary' : ''"
+        :class="useQuasar().screen.lt.md || 'justify-center'"
+        class="row"
       >
-        <q-btn flat square no-caps to="/" class="justify-center">
+        <q-btn
+          :class="useWhitelistStore().is_whitelisted ? 'bg-primary' : ''"
+          flat
+          square
+          no-caps
+          to="/"
+          class="justify-center"
+        >
           <q-toolbar-title>
             <q-avatar>
               <q-img src="logo.svg" />

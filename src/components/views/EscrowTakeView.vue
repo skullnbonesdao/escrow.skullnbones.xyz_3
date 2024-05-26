@@ -10,6 +10,10 @@ import { ACCOUNT_COST_ESCROW, MAKER_FEE, TAKER_FEE } from 'stores/constants';
 import { useWhitelistStore } from 'stores/whitelistStore';
 import { format_number } from 'src/functions/format_number';
 import TokenIcon from 'components/elements/TokenIcon.vue';
+import { useRoute } from 'vue-router';
+import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
+import { useWallet } from 'solana-wallets-vue';
+import TransactionHistoryElement from 'components/elements/TransactionHistoryElement.vue';
 
 const token_deposit_info = computed(() => {
   return useGlobalStore().token_list.find(
@@ -379,9 +383,17 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
       </q-btn-group>
     </q-card-section>
 
-    <q-card-section class="">
+    <q-card-section class="q-gutter-y-sm">
       <ExchangeEscrowAction :exchange_amount="amount_to_buy" />
-      <div class="col row justify-end q-gutter-sm items-center q-mt-sm">
+      <CancelEscrow
+        class="full-width"
+        v-if="
+          useWallet().publicKey.value?.toString() ==
+          useEscrowStore().escrow_selected?.account.maker.toString()
+        "
+        label="Cancel/Close"
+      />
+      <div class="col row justify-end q-gutter-sm items-center">
         <p class="text-right text-weight-thin">Fee</p>
         <q-space />
 
@@ -398,6 +410,20 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
         </q-avatar>
       </div>
     </q-card-section>
+
+    <q-list class="rounded-borders">
+      <q-expansion-item
+        expand-separator
+        icon="history"
+        label="Transaction History"
+      >
+        <q-card>
+          <q-card-section>
+            <TransactionHistoryElement />
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+    </q-list>
   </q-card>
 </template>
 
