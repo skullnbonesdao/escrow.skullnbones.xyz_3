@@ -46,6 +46,7 @@
     </q-drawer>
 
     <q-drawer
+      width="450"
       show-if-above
       v-if="useGlobalStore().showRightDrawer"
       side="right"

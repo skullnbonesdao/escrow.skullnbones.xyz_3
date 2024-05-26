@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
+import { onMounted, watch, computed } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { format_address } from '../functions/format_address';
@@ -49,6 +49,21 @@ watch(
             ) ?? 'not-found'.toUpperCase()
           }}
         </p>
+        <q-space />
+        <q-btn
+          @click="
+            copy_to_clipboard(
+              'https://escrow2.skullnbones.xyz/#/details/' +
+                useEscrowStore().escrow_selected?.publicKey.toString() ??
+                'not-found',
+            )
+          "
+          color="secondary"
+          size="lg"
+          icon="share"
+        >
+          <q-tooltip>Copy direct link</q-tooltip>
+        </q-btn>
       </q-card-section>
       <q-separator />
       <q-card-section>
