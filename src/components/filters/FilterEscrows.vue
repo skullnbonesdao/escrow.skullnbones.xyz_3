@@ -172,10 +172,12 @@ function apply_filter() {
 <template>
   <q-separator />
   <q-card flat>
-    <q-card-section :class="useQuasar().screen.lt.md ? 'row' : 'col'">
+    <q-card-section
+      :class="useQuasar().screen.lt.md ? 'row q-gutter-x-md' : 'col'"
+    >
       <div class="col-2 text-overline">Filter Side</div>
 
-      <q-btn-group class="q-mb-sm" flat>
+      <q-btn-group class="" flat>
         <div class="row">
           <q-btn square unelevated flat class="col-2 bg-sell" label="SELL" />
 
@@ -191,7 +193,6 @@ function apply_filter() {
       <q-btn-group flat>
         <div class="row">
           <q-btn square unelevated flat class="col-2 bg-buy" label="BUY" />
-
           <TokenSelectInput
             dense="true"
             class="col"

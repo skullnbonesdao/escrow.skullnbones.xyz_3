@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useGlobalStore } from 'stores/globalStore';
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import TokenIcon from 'components/elements/TokenIcon.vue';
 import { get_token_imageURL_form_mint } from 'src/functions/get_token_imageURL_form_mint';
 import { useWallet } from 'solana-wallets-vue';
@@ -11,6 +11,7 @@ import { useRoute } from 'vue-router';
 import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
 import { I_Escrows, useEscrowStore } from 'stores/escrowStore';
 import { watchDebounced } from '@vueuse/core';
+import { useQuasar } from 'quasar';
 
 const decimals = 9;
 
@@ -76,6 +77,7 @@ function make_take_view(escrow: I_Escrows) {
 </script>
 
 <template>
+  {{ is_small_screen }}
   <q-table
     class="full-width"
     flat
@@ -276,7 +278,10 @@ function make_take_view(escrow: I_Escrows) {
         <q-td key="actions" :props="props">
           <div class="row items-center justify-around q-gutter-sm">
             <q-btn
-              v-if="!useRoute().path.includes('manage')"
+              :to="
+                '/details/' +
+                useEscrowStore().escrow_selected?.publicKey.toString()
+              "
               dense
               color="secondary"
               icon="keyboard_double_arrow_right"

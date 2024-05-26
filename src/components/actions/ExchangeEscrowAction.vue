@@ -38,9 +38,9 @@ async function buildTransaction() {
   if (
     get_token_amount_wallet(
       useEscrowStore().escrow_selected?.account.requestToken.toString() ?? '',
-    ) < props.exchange_amount
+    ) <
+    props.exchange_amount * useEscrowStore().escrow_selected?.account.price
   ) {
-    console.log('BBB');
     q.notify({
       message: `You dont have enough '${useGlobalStore().token_list.find(
         (t) =>
@@ -163,7 +163,6 @@ async function buildTransaction() {
         ),
         props.exchange_amount,
       );
-      console.log(`exchange_amount: ${exchange_amount}`);
 
       let whitelistProgram = null;
       let whitelist = null;
