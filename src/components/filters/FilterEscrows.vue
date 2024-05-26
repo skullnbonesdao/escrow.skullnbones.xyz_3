@@ -172,34 +172,33 @@ function apply_filter() {
 <template>
   <q-separator />
   <q-card flat>
-    <q-card-section
-      :class="useQuasar().screen.lt.md ? 'row q-gutter-x-md' : 'col'"
-    >
+    <q-card-section>
       <div class="col-2 text-overline">Filter Side</div>
+      <div class="col q-gutter-md">
+        <q-btn-group class="" flat>
+          <div class="row">
+            <q-btn square unelevated flat class="col-2 bg-sell" label="SELL" />
 
-      <q-btn-group class="" flat>
-        <div class="row">
-          <q-btn square unelevated flat class="col-2 bg-sell" label="SELL" />
+            <TokenSelectInput
+              dense="true"
+              filter="filter_zero"
+              class="col"
+              @token_change="(value: I_Token) => (filter_sell = value)"
+            />
+          </div>
+        </q-btn-group>
 
-          <TokenSelectInput
-            dense="true"
-            filter="filter_zero"
-            class="col"
-            @token_change="(value: I_Token) => (filter_sell = value)"
-          />
-        </div>
-      </q-btn-group>
-
-      <q-btn-group flat>
-        <div class="row">
-          <q-btn square unelevated flat class="col-2 bg-buy" label="BUY" />
-          <TokenSelectInput
-            dense="true"
-            class="col"
-            @token_change="(value: I_Token) => (filter_buy = value)"
-          />
-        </div>
-      </q-btn-group>
+        <q-btn-group class="" flat>
+          <div class="row">
+            <q-btn square unelevated flat class="col-2 bg-buy" label="BUY" />
+            <TokenSelectInput
+              dense="true"
+              class="col"
+              @token_change="(value: I_Token) => (filter_buy = value)"
+            />
+          </div>
+        </q-btn-group>
+      </div>
     </q-card-section>
     <q-separator />
     <q-card-section :class="useQuasar().screen.lt.md ? 'row' : 'col'">
