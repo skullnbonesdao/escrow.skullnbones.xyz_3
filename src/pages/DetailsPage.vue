@@ -25,6 +25,13 @@ watch(
     await useEscrowStore().load_escrow(address);
   },
 );
+
+watch(
+  () => useGlobalStore().showRightDrawer,
+  async () => {
+    useGlobalStore().showRightDrawer = false;
+  },
+);
 </script>
 
 <template>

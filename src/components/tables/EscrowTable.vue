@@ -12,6 +12,7 @@ import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
 import { I_Escrows, useEscrowStore } from 'stores/escrowStore';
 import { watchDebounced } from '@vueuse/core';
 import { useQuasar } from 'quasar';
+import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 
 const decimals = 9;
 
@@ -285,14 +286,29 @@ function make_take_view(escrow: I_Escrows) {
         <q-td key="actions" :props="props">
           <div class="row items-center justify-around q-gutter-sm">
             <q-btn
+              dense
+              @click="
+                copy_to_clipboard(
+                  'https://escrow2.skullnbones.xyz/#/details/' +
+                    useEscrowStore().escrow_selected?.publicKey.toString() ??
+                    'not-found',
+                )
+              "
+              color="secondary"
+              icon="share"
+            >
+            </q-btn>
+            <q-btn
               :to="
                 '/details/' +
                 useEscrowStore().escrow_selected?.publicKey.toString()
               "
               dense
               color="secondary"
-              icon="keyboard_double_arrow_right"
-            />
+              icon="aspect_ratio"
+            >
+              <q-tooltip>Expand offer</q-tooltip>
+            </q-btn>
 
             <CancelEscrow v-if="useRoute().path.includes('manage')" />
           </div>
