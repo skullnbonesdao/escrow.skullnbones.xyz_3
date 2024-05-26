@@ -56,11 +56,18 @@ watch(
 );
 
 function make_take_view(escrow: I_Escrows) {
+  if (useEscrowStore().escrow_selected == escrow) {
+    useGlobalStore().showRightDrawer = false;
+    useEscrowStore().escrow_selected = undefined;
+    return;
+  }
+
   useEscrowStore().escrow_selected = escrow;
 
   if (current_path.includes('exchange')) {
     useGlobalStore().showRightDrawer = true;
   }
+
   /*  if (expandable.value) {
     if (
       useEscrowStore().escrow_selected?.publicKey.toString() ==
@@ -77,7 +84,6 @@ function make_take_view(escrow: I_Escrows) {
 </script>
 
 <template>
-  {{ is_small_screen }}
   <q-table
     class="full-width"
     flat
@@ -217,8 +223,8 @@ function make_take_view(escrow: I_Escrows) {
           </div>
         </q-td>
         <q-td key="states" :props="props">
-          <div class="row items-center justify-around">
-            <div>
+          <div class="row items-center">
+            <div class="col">
               <q-icon
                 size="sm"
                 name="balance"
@@ -231,7 +237,7 @@ function make_take_view(escrow: I_Escrows) {
                 >
               </q-icon>
             </div>
-            <div>
+            <div class="col">
               <q-icon
                 size="sm"
                 name="timer"
@@ -247,7 +253,7 @@ function make_take_view(escrow: I_Escrows) {
               </q-icon>
             </div>
 
-            <div>
+            <div class="col">
               <q-icon
                 size="sm"
                 name="design_services"
@@ -270,8 +276,9 @@ function make_take_view(escrow: I_Escrows) {
                 >
               </q-icon>
             </div>
-
-            <EscrowStateElement size="xs" :escrow="props.row" />
+            <div class="col">
+              <EscrowStateElement size="xs" :escrow="props.row" />
+            </div>
           </div>
         </q-td>
 
