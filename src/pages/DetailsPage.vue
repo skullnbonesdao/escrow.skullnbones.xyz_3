@@ -49,8 +49,8 @@ watch(
             ) ?? 'not-found'.toUpperCase()
           }}
         </p>
-        <q-space />
       </q-card-section>
+      <q-separator />
       <q-card-section>
         <EscrowTakeView />
       </q-card-section>
