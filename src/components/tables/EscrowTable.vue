@@ -286,6 +286,17 @@ function make_take_view(escrow: I_Escrows) {
         <q-td key="actions" :props="props">
           <div class="row items-center justify-around q-gutter-sm">
             <q-btn
+              :to="
+                '/details/' +
+                useEscrowStore().escrow_selected?.publicKey.toString()
+              "
+              dense
+              color="secondary"
+              icon="aspect_ratio"
+            >
+              <q-tooltip>Expand offer</q-tooltip>
+            </q-btn>
+            <q-btn
               dense
               @click="
                 copy_to_clipboard(
@@ -298,18 +309,6 @@ function make_take_view(escrow: I_Escrows) {
               icon="share"
             >
             </q-btn>
-            <q-btn
-              :to="
-                '/details/' +
-                useEscrowStore().escrow_selected?.publicKey.toString()
-              "
-              dense
-              color="secondary"
-              icon="aspect_ratio"
-            >
-              <q-tooltip>Expand offer</q-tooltip>
-            </q-btn>
-
             <CancelEscrow v-if="useRoute().path.includes('manage')" />
           </div>
         </q-td>

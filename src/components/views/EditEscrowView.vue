@@ -17,7 +17,7 @@ onMounted(() => {
 <template>
   <q-card class="full-width">
     <q-card-section class="q-gutter-y-xs">
-      <p class="text-center text-h4 text-uppercase">Cancel/Close Escrow</p>
+      <p class="text-center text-h4 text-uppercase">Manage your escrows</p>
     </q-card-section>
     <q-card-section>
       <div
