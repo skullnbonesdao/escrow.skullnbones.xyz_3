@@ -284,7 +284,10 @@ function make_take_view(escrow: I_Escrows) {
         </q-td>
 
         <q-td key="actions" :props="props">
-          <div class="row items-center justify-around q-gutter-sm">
+          <div
+            v-if="useRoute().path != '/exchange' || useQuasar().screen.lt.md"
+            class="row items-center justify-around q-gutter-sm"
+          >
             <q-btn
               :to="
                 '/details/' +
@@ -299,11 +302,13 @@ function make_take_view(escrow: I_Escrows) {
             <q-btn
               dense
               @click="
-                copy_to_clipboard(
-                  'https://escrow.skullnbones.xyz/#/details/' +
-                    useEscrowStore().escrow_selected?.publicKey.toString() ??
-                    'not-found',
-                )
+                () => {
+                  copy_to_clipboard(
+                    'https://escrow.skullnbones.xyz/#/details/' +
+                      useEscrowStore().escrow_selected?.publicKey.toString() ??
+                      'not-found',
+                  );
+                }
               "
               color="secondary"
               icon="share"

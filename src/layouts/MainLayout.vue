@@ -54,6 +54,11 @@
     >
       <div>
         <q-tabs class="bg-secondary">
+          <q-tab
+            @click="useGlobalStore().showRightDrawer = false"
+            icon="chevron_right"
+          ></q-tab>
+          <q-separator vertical />
           <q-route-tab
             icon="aspect_ratio"
             :to="
@@ -62,20 +67,32 @@
             "
             exact
           />
+          <q-separator vertical />
+          <q-tab
+            ripple="false"
+            @click="
+              copy_to_clipboard(
+                'https://escrow.skullnbones.xyz/#/details/' +
+                  useEscrowStore().escrow_selected?.publicKey.toString() ??
+                  'not-found',
+              )
+            "
+            icon="share"
+          ></q-tab>
         </q-tabs>
       </div>
       <EscrowTakeView />
 
-      <div class="q-mini-drawer-hide absolute" style="top: 10px; left: -17px">
-        <q-btn
-          dense
-          round
-          unelevated
-          color="accent"
-          icon="chevron_right"
-          @click="useGlobalStore().showRightDrawer = false"
-        />
-      </div>
+      <!--      <div class="q-mini-drawer-hide absolute" style="top: 10px; left: -17px">-->
+      <!--        <q-btn-->
+      <!--          dense-->
+      <!--          round-->
+      <!--          unelevated-->
+      <!--          color="accent"-->
+      <!--          icon="chevron_right"-->
+      <!--          @click="useGlobalStore().showRightDrawer = false"-->
+      <!--        />-->
+      <!--      </div>-->
     </q-drawer>
 
     <q-page-container>
