@@ -149,28 +149,30 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
         <div class="col q-mr-sm">
           <div class="row items-center">
             <q-space />
-            <div class="col row justify-center">
-              <p>
-                1
-                {{
-                  useGlobalStore().token_list.find(
-                    (t) =>
-                      t.address ==
-                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
-                  )?.symbol
-                }}
-              </p>
-              <TokenIcon
-                class="q-ml-xs"
-                size="xs"
-                :src="
-                  useGlobalStore().token_list.find(
-                    (token) =>
-                      token.address ==
-                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
-                  )?.logoURI ?? 'unknown.png'
-                "
-              />
+            <div class="col row justify-center q-gutter-x-xs">
+              <p>1</p>
+              <div class="row">
+                <p>
+                  {{
+                    useGlobalStore().token_list.find(
+                      (t) =>
+                        t.address ==
+                        useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                    )?.symbol
+                  }}
+                </p>
+                <TokenIcon
+                  class="q-ml-xs"
+                  size="xs"
+                  :src="
+                    useGlobalStore().token_list.find(
+                      (token) =>
+                        token.address ==
+                        useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                    )?.logoURI ?? 'unknown.png'
+                  "
+                />
+              </div>
             </div>
 
             <q-icon
@@ -178,93 +180,102 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
               name="swap_vert"
               style="transform: rotate(90deg)"
             />
-            <div class="col row justify-center">
-              <div>
+            <div class="col row justify-center q-gutter-x-xs">
+              <p>
                 {{
                   format_number(
                     useEscrowStore().escrow_selected?.account.price ?? 0,
                     10,
                   )
                 }}
-                {{
-                  useGlobalStore().token_list.find(
-                    (t) =>
-                      t.address ==
-                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
-                  )?.symbol
-                }}
+              </p>
+              <div class="row">
+                <p>
+                  {{
+                    useGlobalStore().token_list.find(
+                      (t) =>
+                        t.address ==
+                        useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                    )?.symbol
+                  }}
+                </p>
+                <TokenIcon
+                  class="q-ml-xs"
+                  size="xs"
+                  :src="
+                    useGlobalStore().token_list.find(
+                      (token) =>
+                        token.address ==
+                        useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                    )?.logoURI ?? 'unknown.png'
+                  "
+                />
               </div>
-              <TokenIcon
-                class="q-ml-xs"
-                size="xs"
-                :src="
-                  useGlobalStore().token_list.find(
-                    (token) =>
-                      token.address ==
-                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
-                  )?.logoURI ?? 'unknown.png'
-                "
-              />
             </div>
           </div>
           <div class="row items-center">
             <q-space />
-            <div class="col row justify-center">
-              <div>
-                1
-                {{
-                  useGlobalStore().token_list.find(
-                    (t) =>
-                      t.address ==
-                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
-                  )?.symbol
-                }}
+            <div class="col row justify-center q-gutter-x-xs">
+              <p>1</p>
+              <div class="row">
+                <p>
+                  {{
+                    useGlobalStore().token_list.find(
+                      (t) =>
+                        t.address ==
+                        useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                    )?.symbol
+                  }}
+                </p>
+                <TokenIcon
+                  class="q-ml-xs"
+                  size="xs"
+                  :src="
+                    useGlobalStore().token_list.find(
+                      (token) =>
+                        token.address ==
+                        useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                    )?.logoURI ?? 'unknown.png'
+                  "
+                />
               </div>
-              <TokenIcon
-                class="q-ml-xs"
-                size="xs"
-                :src="
-                  useGlobalStore().token_list.find(
-                    (token) =>
-                      token.address ==
-                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
-                  )?.logoURI ?? 'unknown.png'
-                "
-              />
             </div>
             <q-icon
               size="md"
               name="swap_vert"
               style="transform: rotate(90deg)"
             />
-            <div class="col row justify-center">
-              <div>
+            <div class="col row justify-center q-gutter-x-xs">
+              <p>
                 {{
                   format_number(
                     1 / (useEscrowStore().escrow_selected?.account.price ?? 0),
                     10,
                   )
                 }}
-
-                {{
-                  useGlobalStore().token_list.find(
-                    (t) =>
-                      t.address ==
-                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
-                  )?.symbol
-                }}
+              </p>
+              <div class="row">
+                <p>
+                  {{
+                    useGlobalStore().token_list.find(
+                      (t) =>
+                        t.address ==
+                        useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                    )?.symbol
+                  }}
+                </p>
+                <TokenIcon
+                  class="q-ml-xs"
+                  size="xs"
+                  :src="
+                    useGlobalStore().token_list.find(
+                      (token) =>
+                        token.address ==
+                        useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                    )?.logoURI ?? 'unknown.png'
+                  "
+                />
               </div>
-              <TokenIcon
-                class="q-ml-xs"
-                size="xs"
-                :src="
-                  useGlobalStore().token_list.find(
-                    (token) =>
-                      token.address ==
-                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
-                  )?.logoURI ?? 'unknown.png'
-                "
-              />
             </div>
           </div>
         </div>
