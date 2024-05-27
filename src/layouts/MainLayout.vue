@@ -3,7 +3,7 @@
     <q-header class="bg-dark">
       <q-toolbar
         :class="useQuasar().screen.lt.md || 'justify-center'"
-        class="row"
+        class="row q-pa-none"
       >
         <q-btn
           :class="useWhitelistStore().is_whitelisted ? 'bg-primary' : ''"
