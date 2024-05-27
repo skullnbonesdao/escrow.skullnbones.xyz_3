@@ -152,7 +152,13 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
             <div class="col row justify-center">
               <p>
                 1
-                {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+                {{
+                  useGlobalStore().token_list.find(
+                    (t) =>
+                      t.address ==
+                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                  )?.symbol
+                }}
               </p>
               <TokenIcon
                 class="q-ml-xs"
@@ -172,7 +178,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
               name="swap_vert"
               style="transform: rotate(90deg)"
             />
-            <div class="col row justify-end">
+            <div class="col row justify-center">
               <div>
                 {{
                   format_number(
@@ -180,7 +186,13 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
                     10,
                   )
                 }}
-                {{ useEscrowStore().new_escrow.request_token?.symbol }}
+                {{
+                  useGlobalStore().token_list.find(
+                    (t) =>
+                      t.address ==
+                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                  )?.symbol
+                }}
               </div>
               <TokenIcon
                 class="q-ml-xs"
@@ -200,7 +212,13 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
             <div class="col row justify-center">
               <div>
                 1
-                {{ useEscrowStore().new_escrow.request_token?.symbol }}
+                {{
+                  useGlobalStore().token_list.find(
+                    (t) =>
+                      t.address ==
+                      useEscrowStore().escrow_selected?.account.requestToken.toString(),
+                  )?.symbol
+                }}
               </div>
               <TokenIcon
                 class="q-ml-xs"
@@ -219,7 +237,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
               name="swap_vert"
               style="transform: rotate(90deg)"
             />
-            <div class="col row justify-end">
+            <div class="col row justify-center">
               <div>
                 {{
                   format_number(
@@ -228,7 +246,13 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
                   )
                 }}
 
-                {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
+                {{
+                  useGlobalStore().token_list.find(
+                    (t) =>
+                      t.address ==
+                      useEscrowStore().escrow_selected?.account.depositToken.toString(),
+                  )?.symbol
+                }}
               </div>
               <TokenIcon
                 class="q-ml-xs"
