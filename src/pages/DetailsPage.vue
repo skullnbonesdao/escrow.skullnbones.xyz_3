@@ -7,6 +7,7 @@ import { PublicKey } from '@solana/web3.js';
 import { useRoute } from 'vue-router';
 import EscrowTakeView from 'components/views/EscrowTakeView.vue';
 import { useEscrowStore } from 'stores/escrowStore';
+import { useQuasar } from 'quasar';
 
 onMounted(() => {
   useGlobalStore().showLeftDrawer = false;
@@ -35,7 +36,10 @@ watch(
 </script>
 
 <template>
-  <q-page class="row q-pa-sm justify-center">
+  <q-page
+    class="row justify-center"
+    :class="useQuasar().screen.lt.md ? '' : 'q-pa-md'"
+  >
     <q-card class="full-width" style="max-width: 600px" bordered>
       <q-card-section class="row q-gutter-x-sm items-center">
         <p class="text-h4 q-pa-sm">Offer</p>
