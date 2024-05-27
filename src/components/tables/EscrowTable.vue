@@ -300,7 +300,7 @@ function make_take_view(escrow: I_Escrows) {
               dense
               @click="
                 copy_to_clipboard(
-                  'https://escrow2.skullnbones.xyz/#/details/' +
+                  'https://escrow.skullnbones.xyz/#/details/' +
                     useEscrowStore().escrow_selected?.publicKey.toString() ??
                     'not-found',
                 )

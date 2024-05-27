@@ -17,7 +17,7 @@ export function make_discord_message() {
         useEscrowStore().escrow_selected?.account.depositToken.toString(),
     )?.symbol ?? '???') +
     '](' +
-    'https://escrow2.skullnbones.xyz/#/view/' +
+    'https://escrow.skullnbones.xyz/#/view/' +
     useEscrowStore().escrow_selected?.publicKey.toString() +
     ') :link:';
 
