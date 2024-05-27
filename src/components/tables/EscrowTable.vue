@@ -224,7 +224,7 @@ function make_take_view(escrow: I_Escrows) {
           </div>
         </q-td>
         <q-td key="states" :props="props">
-          <div class="row items-center">
+          <div class="row items-center" style="width: 100px">
             <div class="col">
               <q-icon
                 size="sm"
