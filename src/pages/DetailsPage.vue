@@ -22,8 +22,10 @@ onMounted(async () => {
 watch(
   () => useRoute()?.params,
   async () => {
-    const address = new PublicKey(useRoute().params.account);
-    await useEscrowStore().load_escrow(address);
+    if (useRoute()?.params.account) {
+      const address = new PublicKey(useRoute()?.params.account ?? '');
+      await useEscrowStore().load_escrow(address);
+    }
   },
 );
 
