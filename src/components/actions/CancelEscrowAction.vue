@@ -33,7 +33,7 @@ async function buildTransaction() {
 
   notification_process = q.notify({
     group: false, // required to be updatable
-    timeout: 0, // we want to be in control when it gets dismissed
+    timeout: 60, // we want to be in control when it gets dismissed
     spinner: true,
     message: 'Sending TX...',
   });

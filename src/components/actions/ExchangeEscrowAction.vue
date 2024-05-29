@@ -54,7 +54,7 @@ async function buildTransaction() {
 
   let notification_process = q.notify({
     group: false,
-    timeout: 0,
+    timeout: 60,
     spinner: true,
     message: 'Preparing transaction...',
   });
