@@ -52,12 +52,13 @@ async function buildTransaction() {
     return;
   }
 
-  let notification_process = q.notify({
-    group: false,
-    timeout: 60,
-    spinner: true,
-    message: 'Preparing transaction...',
-  });
+  setTimeout(() => {
+    q.notify({
+      group: false,
+      spinner: true,
+      message: 'Waiting for user to sign...',
+    });
+  }, 2000);
 
   try {
     if (useEscrowStore().escrow_selected) {
@@ -219,15 +220,26 @@ async function buildTransaction() {
       );
 
       console.log(signature);
+
+      q.notify({
+        type: 'positive',
+        icon: 'done',
+        spinner: false,
+        message: 'Transaction confirmed!',
+        timeout: 2500,
+      });
+
+      await useEscrowStore().load_all_escrows();
     }
   } catch (err: any) {
-    notification_process({
+    q.notify({
       type: 'negative',
       icon: 'error',
       spinner: false,
       message: err.toString(),
       timeout: 5000,
     });
+
     console.error(err);
   }
 }

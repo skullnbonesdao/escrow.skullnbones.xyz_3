@@ -8,7 +8,6 @@ import { useWhitelistStore } from 'stores/whitelistStore';
 
 <template>
   <q-expansion-item
-    default-opened
     expand-separator
     icon="settings"
     label="Additional settings"

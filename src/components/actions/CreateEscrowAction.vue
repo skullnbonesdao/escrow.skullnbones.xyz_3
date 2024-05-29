@@ -23,6 +23,7 @@ import { FEE_ACCOUNT, WHITELIST_PROGRAM_ID } from 'stores/constants';
 import { useGlobalStore } from 'stores/globalStore';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
 import { useWhitelistStore } from 'stores/whitelistStore';
+import { ref } from 'vue';
 
 const q = useQuasar();
 
@@ -31,12 +32,13 @@ async function buildTransaction() {
   const { sendTransaction } = useWallet();
   const pg_escrow = ws?.pg_escrow;
 
-  let notification_process = q.notify({
-    group: false,
-    timeout: 60,
-    spinner: true,
-    message: 'Preparing transaction...',
-  });
+  setTimeout(() => {
+    q.notify({
+      group: false,
+      spinner: true,
+      message: 'Waiting for user to sign...',
+    });
+  }, 2000);
 
   try {
     let transaction = new Transaction();
@@ -178,15 +180,25 @@ async function buildTransaction() {
     );
 
     console.log(signature);
+    q.notify({
+      type: 'positive',
+      icon: 'info',
+      spinner: false,
+      message: 'Transaction confirmed!',
+      timeout: 5000,
+    });
+
+    await useEscrowStore().load_all_escrows();
   } catch (err: any) {
     console.error(err);
-    notification_process({
+    q.notify({
       type: 'negative',
       icon: 'error',
       spinner: false,
       message: err.toString(),
       timeout: 5000,
     });
+
     console.error(err);
   }
 }

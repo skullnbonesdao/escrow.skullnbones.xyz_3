@@ -31,12 +31,13 @@ async function buildTransaction() {
 
   let notification_process: any;
 
-  notification_process = q.notify({
-    group: false, // required to be updatable
-    timeout: 60, // we want to be in control when it gets dismissed
-    spinner: true,
-    message: 'Sending TX...',
-  });
+  setTimeout(() => {
+    q.notify({
+      group: false,
+      spinner: true,
+      message: 'Waiting for user to sign...',
+    });
+  }, 2000);
 
   try {
     let transaction = new Transaction();
@@ -144,22 +145,23 @@ async function buildTransaction() {
 
     console.log(signature);
 
-    notification_process({
+    q.notify({
       type: 'positive',
-      icon: 'done', // we add an icon
-      spinner: false, // we reset the spinner setting so the icon can be displayed
+      icon: 'done',
+      spinner: false,
       message: 'Transaction confirmed!',
-      timeout: 2500, // we will timeout it in 2.5s
+      timeout: 2500,
     });
+    await useEscrowStore().load_all_escrows();
   } catch (err: any) {
     console.error(err);
 
-    notification_process({
+    q.notify({
       type: 'negative',
-      icon: 'error', // we add an icon
-      spinner: false, // we reset the spinner setting so the icon can be displayed
+      icon: 'error',
+      spinner: false,
       message: err.toString(),
-      timeout: 5000, // we will timeout it in 2.5s
+      timeout: 5000,
     });
   }
 }
