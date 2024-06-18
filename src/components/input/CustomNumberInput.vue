@@ -82,7 +82,7 @@ const value_formatted = computed({
 
     value.value = valueString;
     console.log(format(value.value, config.value));
-    emits('valueChange', format(value.value, config.value));
+    emits('valueChange', value.value);
   },
 });
 
