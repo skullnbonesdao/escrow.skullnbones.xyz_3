@@ -7,6 +7,8 @@ import { useGlobalStore } from 'stores/globalStore';
 import { userTokenStore } from '../../stores/userTokenStore';
 import accept = chrome.socket.accept;
 import { format_number } from 'src/functions/format_number';
+import { useEscrowStore } from '../../stores/escrowStore';
+import { parse } from '@typescript-eslint/parser';
 
 const props = defineProps({
   token_amount: {
@@ -95,7 +97,11 @@ watch(
 
       <div
         class="text-weight-thin row q-ma-xs"
-        @click="amount = available_amount as number"
+        @click="
+          () => {
+            amount = parseFloat(available_amount.replaceAll(',', ''));
+          }
+        "
       >
         <q-tooltip>'Click' to apply 100% </q-tooltip>
         <div>Available:</div>
