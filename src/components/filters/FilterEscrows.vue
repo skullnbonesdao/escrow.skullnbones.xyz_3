@@ -120,7 +120,11 @@ function apply_filter() {
   if (!extra_filter.value.some((filter) => filter == 'filled')) {
     useEscrowStore().escrows_filtered =
       useEscrowStore().escrows_filtered?.filter(
-        (escrow) => escrow.account.tokensDepositRemaining.toNumber() != 0,
+        (escrow) =>
+          ((escrow?.account.tokensDepositRemaining.toNumber() ?? 0) /
+            (escrow?.account.tokensDepositInit.toNumber() ?? 0)) *
+            100 >
+          0.001,
       );
   }
 
