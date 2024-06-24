@@ -48,6 +48,7 @@ const columns = [
     align: 'center',
   },
 ];
+const is_mobile = ref(useQuasar().screen.lt.md);
 
 const filtered_rows = ref(useEscrowStore().escrows);
 
@@ -57,19 +58,20 @@ watch(
 );
 
 function make_take_view(escrow: I_Escrows) {
-  if (useEscrowStore().escrow_selected == escrow) {
-    useGlobalStore().showRightDrawer = false;
-    useEscrowStore().escrow_selected = undefined;
-    return;
-  }
+  if (!is_mobile.value) {
+    if (useEscrowStore().escrow_selected == escrow) {
+      useGlobalStore().showRightDrawer = false;
+      useEscrowStore().escrow_selected = undefined;
+      return;
+    }
 
-  useEscrowStore().escrow_selected = escrow;
+    useEscrowStore().escrow_selected = escrow;
 
-  if (current_path.includes('exchange')) {
-    useGlobalStore().showRightDrawer = true;
-  }
+    if (current_path.includes('exchange')) {
+      useGlobalStore().showRightDrawer = true;
+    }
 
-  /*  if (expandable.value) {
+    /*  if (expandable.value) {
     if (
       useEscrowStore().escrow_selected?.publicKey.toString() ==
         escrow.publicKey.toString() &&
@@ -81,6 +83,7 @@ function make_take_view(escrow: I_Escrows) {
       useGlobalStore().escrow_selected = escrow;
     }
   }*/
+  }
 }
 </script>
 
@@ -289,24 +292,21 @@ function make_take_view(escrow: I_Escrows) {
             class="row items-center justify-around q-gutter-sm"
           >
             <q-btn
-              :to="
-                '/details/' +
-                useEscrowStore().escrow_selected?.publicKey.toString()
-              "
+              :to="'/details/' + props.row.publicKey.toString()"
               dense
               color="secondary"
               icon="aspect_ratio"
             >
               <q-tooltip>Expand offer</q-tooltip>
             </q-btn>
+
             <q-btn
               dense
               @click="
                 () => {
                   copy_to_clipboard(
                     'https://escrow.skullnbones.xyz/#/details/' +
-                      useEscrowStore().escrow_selected?.publicKey.toString() ??
-                      'not-found',
+                      props.row.publicKey.toString() ?? 'not-found',
                   );
                 }
               "
