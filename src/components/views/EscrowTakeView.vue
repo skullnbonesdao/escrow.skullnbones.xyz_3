@@ -87,7 +87,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
 </script>
 
 <template>
-  <q-card flat class="">
+  <q-card flat class="q-mx-xs">
     <q-list class="bg-primary">
       <q-expansion-item icon="info" label="Details" dense>
         <template v-slot:header>

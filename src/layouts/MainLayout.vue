@@ -50,7 +50,7 @@
       v-if="useGlobalStore().showRightDrawer"
       side="right"
     >
-      <div>
+      <div class="q-mb-xs">
         <q-tabs class="bg-secondary">
           <q-tab
             @click="useGlobalStore().showRightDrawer = false"
