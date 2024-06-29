@@ -20,16 +20,6 @@ onMounted(async () => {
 });
 
 watch(
-  () => useRoute()?.params,
-  async () => {
-    if (useRoute()?.params.account) {
-      const address = new PublicKey(useRoute()?.params.account ?? '');
-      await useEscrowStore().load_escrow(address);
-    }
-  },
-);
-
-watch(
   () => useGlobalStore().showRightDrawer,
   async () => {
     useGlobalStore().showRightDrawer = false;
