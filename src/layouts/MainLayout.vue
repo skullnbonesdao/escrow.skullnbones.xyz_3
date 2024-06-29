@@ -39,7 +39,6 @@
       show-if-above
       v-if="useGlobalStore().showLeftDrawer"
       side="left"
-      bordered
       @click.capture="leftDrawerClick"
     >
       <FilterEscrows />
@@ -50,7 +49,6 @@
       show-if-above
       v-if="useGlobalStore().showRightDrawer"
       side="right"
-      bordered
     >
       <div>
         <q-tabs class="bg-secondary">

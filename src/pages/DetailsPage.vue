@@ -32,8 +32,8 @@ watch(
     class="row justify-center"
     :class="useQuasar().screen.lt.md ? '' : 'q-pa-md'"
   >
-    <q-card class="full-width" style="max-width: 600px" bordered>
-      <q-card-section class="row q-gutter-x-sm items-center">
+    <q-card class="full-width" style="max-width: 600px">
+      <q-card-section class="row items-center">
         <p class="text-h4 q-pa-sm">Offer</p>
         <q-space />
         <p
