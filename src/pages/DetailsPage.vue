@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, watch, computed } from 'vue';
+import { onMounted, watch, computed, ref } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { format_address } from '../functions/format_address';
@@ -9,14 +9,13 @@ import EscrowTakeView from 'components/views/EscrowTakeView.vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import { useQuasar } from 'quasar';
 
-onMounted(() => {
-  useGlobalStore().showLeftDrawer = false;
-  useGlobalStore().showRightDrawer = false;
-});
+const route = useRoute();
+const address = route.params.account;
 
 onMounted(async () => {
-  const address = new PublicKey(useRoute().params.account);
-  await useEscrowStore().load_escrow(address);
+  useGlobalStore().showLeftDrawer = false;
+  useGlobalStore().showRightDrawer = false;
+  await useEscrowStore().load_escrow(new PublicKey(address));
 });
 
 watch(

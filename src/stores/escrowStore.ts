@@ -43,7 +43,7 @@ export const useEscrowStore = defineStore('escrowStore', {
     async load_all_escrows() {
       const data = await useWorkspace()?.pg_escrow.value.account.escrow.all();
       this.escrows = data as unknown as Array<I_Escrows>;
-      this.escrow_selected = this.escrows[0];
+      //this.escrow_selected = this.escrows[0];
     },
     async load_escrow(address: PublicKey) {
       console.log('load_escrow()');
