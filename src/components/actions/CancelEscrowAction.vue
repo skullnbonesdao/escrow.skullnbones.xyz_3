@@ -22,7 +22,7 @@ import {
 } from 'src/functions/check_and_make_ata';
 
 const q = useQuasar();
-const props = defineProps(['label']);
+const props = defineProps(['label', 'escrow_address']);
 
 async function buildTransaction() {
   const ws = useWorkspace();
@@ -41,6 +41,10 @@ async function buildTransaction() {
 
   try {
     let transaction = new Transaction();
+
+    if (props.escrow_address) {
+      await useEscrowStore().load_escrow(new PublicKey(props.escrow_address));
+    }
 
     const escrow_account = await pg_escrow?.value.account.escrow.fetch(
       useEscrowStore().escrow_selected?.publicKey ?? '',

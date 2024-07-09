@@ -13,6 +13,7 @@ import { I_Escrows, useEscrowStore } from 'stores/escrowStore';
 import { watchDebounced } from '@vueuse/core';
 import { useQuasar } from 'quasar';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
+import { PublicKey } from '@solana/web3.js';
 
 const decimals = 9;
 
@@ -314,7 +315,11 @@ function make_take_view(escrow: I_Escrows) {
               icon="share"
             >
             </q-btn>
-            <CancelEscrow v-if="useRoute().path.includes('manage')" />
+
+            <CancelEscrow
+              :escrow_address="props.row.publicKey.toString()"
+              v-if="useRoute().path.includes('manage')"
+            />
           </div>
         </q-td>
       </q-tr>
