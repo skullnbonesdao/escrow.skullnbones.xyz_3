@@ -22,7 +22,6 @@ const token_deposit_info = computed(() => {
       useEscrowStore().escrow_selected?.account.depositToken.toString(),
   ) as I_Token;
 });
-
 const token_request_info = computed(() => {
   return useGlobalStore().token_list.find(
     (t) =>
@@ -31,31 +30,15 @@ const token_request_info = computed(() => {
   );
 });
 
-const amount_to_buy_comp = computed(() => {
-  return parseInt(
-    (
-      (useEscrowStore().escrow_selected?.account.tokensDepositRemaining.toNumber() ??
-        0) * Math.pow(10, -(token_deposit_info.value?.decimals ?? 0))
-    ).toFixed(2),
-  );
-});
-
-watch(
-  () => amount_to_buy_comp.value,
-  () => {
-    calculate_side('sell', amount_to_buy.value);
-  },
-);
-
-const amount_to_buy = ref<number>(amount_to_buy_comp.value);
+const amount_to_buy = ref(0);
 const amount_to_sell = ref(0);
-calculate_side('sell', amount_to_buy.value);
+
+calc_percent_amount(1);
 
 watch(
   () => useEscrowStore().escrow_selected,
   () => {
-    amount_to_buy.value = amount_to_buy_comp.value;
-    calculate_side('sell', amount_to_buy.value);
+    calc_percent_amount(1);
   },
 );
 
@@ -410,7 +393,7 @@ function calculate_side(side: 'buy' | 'sell', other: number) {
               {{ token_deposit_info?.symbol }}
             </div>
             <div class="text-subtitle1 text-bold text-green">
-              +{{ Math.trunc(amount_to_buy).toFixed(2) }}
+              +{{ amount_to_buy.toFixed(2) }}
             </div>
             <q-avatar size="sm" color="white">
               <img :src="token_deposit_info?.logoURI ?? 'unknown.png'" />
