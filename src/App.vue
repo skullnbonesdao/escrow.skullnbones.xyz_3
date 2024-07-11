@@ -12,11 +12,12 @@ import { useEscrowStore } from 'stores/escrowStore';
 import { userTokenStore } from 'stores/userTokenStore';
 import { useWallet } from 'solana-wallets-vue';
 import { useWhitelistStore } from 'stores/whitelistStore';
+import { useRPCStore } from 'stores/rpcStore';
 
 defineOptions({
   name: 'App',
 });
-
+useRPCStore();
 useGlobalStore();
 useGlobalStore().init();
 
