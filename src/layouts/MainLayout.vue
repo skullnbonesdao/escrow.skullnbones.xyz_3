@@ -95,41 +95,12 @@
 
     <q-page-container>
       <DisclaimerDialog class="col-1" />
+      <RPCDialog v-if="useRPCStore().show_rpc_select" class="col-1" />
       <router-view class="bg-gradient" />
     </q-page-container>
 
     <q-footer class="bg-dark">
-      <q-separator />
-      <q-toolbar>
-        <q-toolbar-title class="row items-center">
-          <div class="col">
-            <q-img src=" sa-powered_by_the_people.png" width="100px" />
-          </div>
-          <div
-            class="col text-subtitle2 text-center"
-            style="font-size: 10px"
-            @click="
-              copy_to_clipboard('budkxEapRhWjRYXSEurLjyT9jpsd92y1smqMYzSBgTC')
-            "
-          >
-            {{ format_address('budkxEapRhWjRYXSEurLjyT9jpsd92y1smqMYzSBgTC') }}
-          </div>
-
-          <div class="col text-right text-subtitle2">v{{ v }}</div>
-          <div class="">
-            <!--            <q-btn flat class="q-mx-sm" round to="/settings">-->
-            <!--              <q-avatar size="30px">-->
-            <!--                <q-icon name="settings" />-->
-            <!--              </q-avatar>-->
-            <!--            </q-btn>-->
-            <!--            <q-btn flat class="q-mx-sm" round @click="useQuasar().dark.toggle">-->
-            <!--              <q-avatar size="30px">-->
-            <!--                <q-icon name="info" />-->
-            <!--              </q-avatar>-->
-            <!--            </q-btn>-->
-          </div>
-        </q-toolbar-title>
-      </q-toolbar>
+      <FooterLayout />
     </q-footer>
   </q-layout>
 </template>
@@ -137,18 +108,18 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
-import { version } from 'src/../package.json';
+
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { WalletMultiButton } from 'solana-wallets-vue';
 import FilterEscrows from 'components/filters/FilterEscrows.vue';
 import EscrowTakeView from 'components/views/EscrowTakeView.vue';
-import { format_address } from '../functions/format_address';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
 import DisclaimerDialog from 'components/dialogs/DisclaimerDialog.vue';
 import { useWhitelistStore } from '../stores/whitelistStore';
-
-const v = version;
+import FooterLayout from 'layouts/FooterLayout.vue';
+import RPCDialog from 'components/dialogs/RPCDialog.vue';
+import { useRPCStore } from 'stores/rpcStore';
 
 const leftDrawerOpen = ref(false);
 const rightDrawerOpen = ref(false);
