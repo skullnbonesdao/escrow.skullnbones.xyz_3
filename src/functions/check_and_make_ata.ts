@@ -1,12 +1,12 @@
-import { PublicKey, Transaction } from '@solana/web3.js';
+import { PublicKey } from '@solana/web3.js';
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   createAssociatedTokenAccountInstruction,
   getAssociatedTokenAddress,
   TOKEN_PROGRAM_ID,
 } from '@solana/spl-token';
-import { useGlobalStore } from 'stores/globalStore';
 import { useWallet } from 'solana-wallets-vue';
+import { useRPCStore } from 'stores/rpcStore';
 
 export async function check_ata_exists(
   mintAddress: PublicKey,
@@ -21,7 +21,7 @@ export async function check_ata_exists(
   );
 
   const accountInfo =
-    await useGlobalStore().connection.getAccountInfo(associatedAddress);
+    await useRPCStore().connection.getAccountInfo(associatedAddress);
   if (accountInfo === null) {
     console.log(
       'Associated token account does NOT exist:',

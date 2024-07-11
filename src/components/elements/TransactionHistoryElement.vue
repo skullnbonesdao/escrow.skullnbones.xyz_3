@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import axios from 'axios';
 import { format_address } from 'src/functions/format_address';

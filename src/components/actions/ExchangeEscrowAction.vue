@@ -4,7 +4,6 @@ import { useWorkspace } from 'src/adapter/adapterPrograms';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
 import {
-  ComputeBudgetProgram,
   Connection,
   PublicKey,
   SystemProgram,
@@ -24,8 +23,9 @@ import BN from 'bn.js';
 import { FEE_ACCOUNT, WHITELIST_PROGRAM_ID } from 'stores/constants';
 import { useGlobalStore } from 'stores/globalStore';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
-import { get_token_amount_wallet, userTokenStore } from 'stores/userTokenStore';
+import { get_token_amount_wallet } from 'stores/userTokenStore';
 import { useWhitelistStore } from 'stores/whitelistStore';
+import { useRPCStore } from 'stores/rpcStore';
 
 const q = useQuasar();
 const props = defineProps(['exchange_amount']);
@@ -198,7 +198,7 @@ async function buildTransaction() {
         })
         .transaction();
 
-      if (escrow_transaction) transaction.add(escrow_transaction);
+      if (escrow_transaction) transaction.add(await escrow_transaction);
 
       // const units = await getSimulationComputeUnits(
       //   useGlobalStore().connection as Connection,
@@ -211,11 +211,11 @@ async function buildTransaction() {
 
       const signature = await sendTransaction(
         transaction,
-        useGlobalStore().connection as Connection,
+        useRPCStore().connection as Connection,
       );
 
       await waitForTransactionConfirmation(
-        useGlobalStore().connection as Connection,
+        useRPCStore().connection as Connection,
         signature,
       );
 

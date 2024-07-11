@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useGlobalStore } from 'src/stores/globalStore';
 import EscrowTable from 'components/tables/EscrowTable.vue';
-import { computed, onMounted, ref } from 'vue';
-import { useEscrowStore } from '../stores/escrowStore';
+import { onMounted, ref } from 'vue';
 import { useQuasar } from 'quasar';
 import FilterEscrows from 'components/filters/FilterEscrows.vue';
 

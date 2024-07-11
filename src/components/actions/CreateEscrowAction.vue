@@ -20,10 +20,9 @@ import {
   make_ata_instruction,
 } from 'src/functions/check_and_make_ata';
 import { FEE_ACCOUNT, WHITELIST_PROGRAM_ID } from 'stores/constants';
-import { useGlobalStore } from 'stores/globalStore';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
 import { useWhitelistStore } from 'stores/whitelistStore';
-import { ref } from 'vue';
+import { useRPCStore } from 'stores/rpcStore';
 
 const q = useQuasar();
 
@@ -168,14 +167,14 @@ async function buildTransaction() {
       })
       .transaction();
 
-    if (escrow_transaction) transaction.add(escrow_transaction);
+    if (escrow_transaction) transaction.add(await escrow_transaction);
     const signature = await sendTransaction(
       transaction,
-      useGlobalStore().connection as Connection,
+      useRPCStore().connection as Connection,
     );
 
     await waitForTransactionConfirmation(
-      useGlobalStore().connection as Connection,
+      useRPCStore().connection as Connection,
       signature,
     );
 

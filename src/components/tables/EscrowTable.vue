@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useGlobalStore } from 'stores/globalStore';
-import { computed, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import TokenIcon from 'components/elements/TokenIcon.vue';
 import { get_token_imageURL_form_mint } from 'src/functions/get_token_imageURL_form_mint';
 import { useWallet } from 'solana-wallets-vue';
@@ -10,10 +10,8 @@ import FormatTokenNumber from 'components/elements/FormatTokenNumber.vue';
 import { useRoute } from 'vue-router';
 import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
 import { I_Escrows, useEscrowStore } from 'stores/escrowStore';
-import { watchDebounced } from '@vueuse/core';
 import { useQuasar } from 'quasar';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
-import { PublicKey } from '@solana/web3.js';
 
 const decimals = 9;
 

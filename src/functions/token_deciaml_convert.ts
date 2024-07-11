@@ -1,5 +1,6 @@
 import { PublicKey } from '@solana/web3.js';
 import { useGlobalStore } from 'stores/globalStore';
+import { useRPCStore } from 'stores/rpcStore';
 
 export async function amount2ui(mint: PublicKey, amount: number) {
   return amount * Math.pow(10, -(await getDecimals(mint)));
@@ -16,7 +17,7 @@ export async function getDecimals(mint: PublicKey) {
     )?.decimals ?? 0;
 
   if (decimals == 0) {
-    return (await useGlobalStore().connection.getParsedAccountInfo(mint)).value
+    return (await useRPCStore().connection.getParsedAccountInfo(mint)).value
       ?.data.parsed.info.decimals;
   }
   return decimals;

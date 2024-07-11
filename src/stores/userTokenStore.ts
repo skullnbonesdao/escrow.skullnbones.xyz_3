@@ -1,19 +1,8 @@
 import { defineStore } from 'pinia';
-import { I_Token } from 'stores/interfaces/I_TokenList';
-
-import * as token_list_local from './local_tokenlist.json';
-import { Escrow } from 'src/adapter/escrow_gen/accounts';
-import {
-  AccountInfo,
-  Connection,
-  ParsedAccountData,
-  PublicKey,
-} from '@solana/web3.js';
-import { RPC_NETWORKS } from 'stores/interfaces/RPC_Networks';
-import { useWorkspace } from 'src/adapter/adapterPrograms';
+import { AccountInfo, ParsedAccountData, PublicKey } from '@solana/web3.js';
 import { useWallet } from 'solana-wallets-vue';
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
-import { useGlobalStore } from 'stores/globalStore';
+import { useRPCStore } from 'stores/rpcStore';
 
 export interface I_Account {
   pubkey: PublicKey;
@@ -28,7 +17,7 @@ export const userTokenStore = defineStore('userTokenStore', {
     async load_token_accounts() {
       if (useWallet().publicKey.value) {
         this.accounts = (
-          await useGlobalStore().connection.getParsedTokenAccountsByOwner(
+          await useRPCStore().connection.getParsedTokenAccountsByOwner(
             useWallet().publicKey.value!,
             {
               programId: TOKEN_PROGRAM_ID,

@@ -2,10 +2,6 @@
 import { useQuasar } from 'quasar';
 import { onMounted } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
-import {
-  get_token_amount_wallet,
-  userTokenStore,
-} from '../stores/userTokenStore';
 
 onMounted(() => {
   useGlobalStore().showLeftDrawer = false;

@@ -1,4 +1,5 @@
 import { PublicKey } from '@solana/web3.js';
+
 export const ACCOUNT_COST_ESCROW = 0.0044;
 export const MAKER_FEE = 0.001;
 export const TAKER_FEE = 0.0006;

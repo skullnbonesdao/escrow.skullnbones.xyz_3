@@ -4,7 +4,6 @@ import { NULL_ADDRESS } from 'stores/constants';
 import { useWallet } from 'solana-wallets-vue';
 import { useQuasar } from 'quasar';
 import { useRouter } from 'vue-router';
-import { useGlobalStore } from 'stores/globalStore';
 import TokenSelectInput from 'components/input/TokenSelectInput.vue';
 import { I_Token } from 'stores/interfaces/I_TokenList';
 import { useEscrowStore } from 'stores/escrowStore';

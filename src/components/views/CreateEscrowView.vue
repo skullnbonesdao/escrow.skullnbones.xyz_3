@@ -5,16 +5,10 @@ import BuySellTokenInputElemenet from 'components/elements/BuySellTokenInputElem
 
 import { useEscrowStore } from 'stores/escrowStore';
 import EscrowConfigList from 'components/elements/EscrowConfigList.vue';
-import CreateEscrow from 'components/actions/CreateEscrowAction.vue';
 import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
-import {
-  ACCOUNT_COST_ESCROW,
-  MAKER_FEE,
-  TAKER_FEE,
-} from '../../stores/constants';
+import { ACCOUNT_COST_ESCROW, MAKER_FEE } from '../../stores/constants';
 import { useWhitelistStore } from '../../stores/whitelistStore';
 import { format_number } from '../../functions/format_number';
-import ExchangeEscrowAction from 'components/actions/ExchangeEscrowAction.vue';
 </script>
 
 <template>

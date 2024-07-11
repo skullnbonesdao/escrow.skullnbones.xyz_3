@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, watch, computed, ref } from 'vue';
+import { onMounted, watch } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { format_address } from '../functions/format_address';

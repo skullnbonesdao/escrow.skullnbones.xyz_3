@@ -2,7 +2,6 @@
 import EscrowTable from 'components/tables/EscrowTable.vue';
 import { onMounted } from 'vue';
 import { useEscrowStore } from 'stores/escrowStore';
-import { useGlobalStore } from 'stores/globalStore';
 import { useWallet, WalletMultiButton } from 'solana-wallets-vue';
 
 onMounted(() => {

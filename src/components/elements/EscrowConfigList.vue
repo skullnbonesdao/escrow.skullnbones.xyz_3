@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useEscrowStore } from 'stores/escrowStore';
-import { useGlobalStore } from 'stores/globalStore';
 import InputAndCheckPubkey from 'components/input/InputAndCheckPubkey.vue';
 import InputTimestamp from 'components/input/InputTimestamp.vue';
 import { useWhitelistStore } from 'stores/whitelistStore';

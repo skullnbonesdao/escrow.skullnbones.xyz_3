@@ -7,7 +7,6 @@ import {
   Transaction,
 } from '@solana/web3.js';
 import { waitForTransactionConfirmation } from 'src/functions/wait_for_transaction_confirmation';
-import { useGlobalStore } from 'stores/globalStore';
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   getAssociatedTokenAddressSync,
@@ -20,6 +19,7 @@ import {
   check_ata_exists,
   make_ata_instruction,
 } from 'src/functions/check_and_make_ata';
+import { useRPCStore } from 'stores/rpcStore';
 
 const q = useQuasar();
 const props = defineProps(['label', 'escrow_address']);
@@ -135,15 +135,15 @@ async function buildTransaction() {
       })
       .transaction();
 
-    if (escrow_transaction) transaction.add(escrow_transaction);
+    if (escrow_transaction) transaction.add(await escrow_transaction);
 
     const signature = await sendTransaction(
       transaction,
-      useGlobalStore().connection as Connection,
+      useRPCStore().connection as Connection,
     );
 
     await waitForTransactionConfirmation(
-      useGlobalStore().connection as Connection,
+      useRPCStore().connection as Connection,
       signature,
     );
 

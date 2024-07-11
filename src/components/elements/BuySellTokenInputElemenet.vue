@@ -2,13 +2,9 @@
 import { I_Token } from 'stores/interfaces/I_TokenList';
 import CustomNumberInput from 'components/input/CustomNumberInput.vue';
 import TokenSelectInput from 'components/input/TokenSelectInput.vue';
-import { computed, PropType, ref, watch } from 'vue';
-import { useGlobalStore } from 'stores/globalStore';
+import { computed, ref, watch } from 'vue';
 import { userTokenStore } from '../../stores/userTokenStore';
-import accept = chrome.socket.accept;
 import { format_number } from 'src/functions/format_number';
-import { useEscrowStore } from '../../stores/escrowStore';
-import { parse } from '@typescript-eslint/parser';
 
 const props = defineProps({
   token_amount: {

@@ -48,6 +48,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useLocalStorage } from '@vueuse/core';
+
 const checked = ref(false);
 const persistent = ref(useLocalStorage('disclaimer_ack', true));
 </script>
