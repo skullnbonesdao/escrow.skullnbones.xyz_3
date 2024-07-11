@@ -39,12 +39,20 @@
 import { ref } from 'vue';
 import { useRPCStore } from 'stores/rpcStore';
 import { RPC_NETWORKS } from 'stores/interfaces/RPC_Networks';
+import { useQuasar } from 'quasar';
 
 const checked = ref(false);
 const persistent = ref(true);
+const q = useQuasar();
 
 function update_selection() {
   useRPCStore().show_rpc_select = false;
   useRPCStore().update_connection();
+  q.notify({
+    type: 'positive',
+    icon: 'info',
+    message: `RPC has been updated to: ${useRPCStore().rpc_stored_name}`,
+    timeout: 5000,
+  });
 }
 </script>
