@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 import BuySellTokenInputElemenet from 'components/elements/BuySellTokenInputElemenet.vue';
 import EscrowDetails from 'components/elements/EscrowDetails.vue';
@@ -34,6 +34,10 @@ const amount_to_buy = ref(0);
 const amount_to_sell = ref(0);
 
 calc_percent_amount(1);
+
+onMounted(() => {
+  calc_percent_amount(1);
+});
 
 watch(
   () => useEscrowStore().escrow_selected,
