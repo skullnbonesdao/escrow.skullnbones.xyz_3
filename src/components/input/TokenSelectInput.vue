@@ -5,7 +5,12 @@ import TokenIcon from 'components/elements/TokenIcon.vue';
 import { userTokenStore } from '../../stores/userTokenStore';
 
 const emits = defineEmits(['token_change']);
-const props = defineProps(['dense', 'init_value', 'show_only_available']);
+const props = defineProps([
+  'label',
+  'dense',
+  'init_value',
+  'show_only_available',
+]);
 
 const model = ref(props.init_value);
 const options = ref(useGlobalStore().token_list);
@@ -60,7 +65,7 @@ function abortFilterFn() {
 
 <template>
   <q-select
-    label="Token"
+    :label="props.label ?? 'Token'"
     square
     filled
     v-model="model"

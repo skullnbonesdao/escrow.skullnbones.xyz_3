@@ -9,52 +9,37 @@ import CreateEscrowAction from 'components/actions/CreateEscrowAction.vue';
 import { ACCOUNT_COST_ESCROW, MAKER_FEE } from '../../stores/constants';
 import { useWhitelistStore } from '../../stores/whitelistStore';
 import { format_number } from '../../functions/format_number';
+import { ref } from 'vue';
+import CreateEscrowByPrice from 'components/views/CreateEscrowByPrice.vue';
+import CreateEscrowByTotal from 'components/views/CreateEscrowByTotal.vue';
+
+const active_by_tab = ref('by_total');
 </script>
 
 <template>
-  <q-card style="max-width: 600px" bordered>
+  <q-card style="width: 600px" bordered>
     <q-card-section class="q-gutter-y-xs">
       <p class="text-center text-h4 text-uppercase">Create Escrow</p>
     </q-card-section>
 
     <q-separator />
 
-    <q-card-section class="row q-gutter-x-md">
-      <BuySellTokenInputElemenet
-        side="offer"
-        :token_input="useEscrowStore().new_escrow.deposit_token"
-        :token_amount="useEscrowStore().new_escrow.deposit_amount"
-        @tokenChange="
-          (value: I_Token) =>
-            (useEscrowStore().new_escrow.deposit_token = value)
-        "
-        @amountChange="
-          (value: number) =>
-            (useEscrowStore().new_escrow.deposit_amount = parseFloat(
-              value.toString().replace(',', ''),
-            ))
-        "
-      />
+    <q-tabs v-model="active_by_tab">
+      <q-tab label="By Price" name="by_price"></q-tab>
+      <q-tab label="By Total" name="by_total"></q-tab>
+    </q-tabs>
+    <q-separator />
 
-      <BuySellTokenInputElemenet
-        side="request"
-        :token_input="useEscrowStore().new_escrow.request_token"
-        :token_amount="useEscrowStore().new_escrow.request_amount"
-        @tokenChange="
-          (value: I_Token) =>
-            (useEscrowStore().new_escrow.request_token = value)
-        "
-        @amountChange="
-          (value: number) =>
-            (useEscrowStore().new_escrow.request_amount = parseFloat(
-              value.toString().replace(',', ''),
-            ))
-        "
-      />
+    <q-card-section v-if="active_by_tab == 'by_price'">
+      <CreateEscrowByPrice />
+    </q-card-section>
+
+    <q-card-section v-if="active_by_tab == 'by_total'">
+      <CreateEscrowByTotal />
     </q-card-section>
 
     <q-separator />
-    <q-card-section>
+    <q-card-section v-if="active_by_tab == 'by_total'">
       <q-btn-group flat class="row full-width items-center">
         <div class="col-2 text-h6 text-center">Price</div>
 
@@ -180,7 +165,7 @@ import { format_number } from '../../functions/format_number';
 
             <q-space />
 
-            <p class="text-bold text-red">
+            <p class="text-bold text-red q-mr-xs">
               -{{ useEscrowStore().new_escrow.deposit_amount }}
               {{ useEscrowStore().new_escrow.deposit_token?.symbol }}
             </p>
@@ -201,7 +186,7 @@ import { format_number } from '../../functions/format_number';
             <p class="text-right text-weight-thin">(after fulfilment)</p>
             <q-space />
 
-            <p class="text-weight-thin text-yellow-14">
+            <p class="text-weight-thin text-yellow-14 q-mr-xs">
               +{{ useEscrowStore().new_escrow.request_amount }}
               {{ useEscrowStore().new_escrow.request_token?.symbol }}
             </p>
