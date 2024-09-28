@@ -162,7 +162,7 @@ export const useEscrowStore = defineStore('escrowStore', {
         },
         {} as Record<string, I_Escrows[]>,
       );
-      console.log(this.filter_cards.treeKeys);
+
       console.log('== UPDATED FILTER');
     },
   },
