@@ -4,7 +4,7 @@ import { useGlobalStore } from 'stores/globalStore';
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { format_address } from '../functions/format_address';
 import { PublicKey } from '@solana/web3.js';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import EscrowTakeView from 'components/views/EscrowTakeView.vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import { useQuasar } from 'quasar';
@@ -17,6 +17,8 @@ onMounted(async () => {
   useGlobalStore().showRightDrawer = false;
   await useEscrowStore().load_escrow(new PublicKey(address));
 });
+
+const router = useRouter();
 
 watch(
   () => useGlobalStore().showRightDrawer,
@@ -38,6 +40,12 @@ watch(
       flat
     >
       <q-card-section class="row items-center">
+        <q-btn
+          size="lg"
+          icon="arrow_back"
+          color="primary"
+          @click="router.back()"
+        ></q-btn>
         <p class="text-h4 q-pa-sm">Offer</p>
         <q-space />
         <p
@@ -65,7 +73,7 @@ watch(
                 'not-found',
             )
           "
-          color="secondary"
+          color="primary"
           size="lg"
           icon="share"
         >
