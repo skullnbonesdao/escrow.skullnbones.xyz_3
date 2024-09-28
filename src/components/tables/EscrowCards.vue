@@ -145,7 +145,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
           </q-item-section>
 
           <q-item-section>
-            <div class="text-subtitle1">
+            <div class="text-h6 text-weight-light" style="width: 200px">
               {{
                 useGlobalStore().token_list.find((t) => t.symbol == groupKey)
                   .name
@@ -233,7 +233,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                     <div class="row items-center justify-evenly">
                       <div
                         class="text-h6 text-weight-light"
-                        style="width: 100px"
+                        style="width: 200px"
                       >
                         {{
                           useGlobalStore().token_list.find(
@@ -244,7 +244,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                       <q-icon size="md" name="chevron_right" />
                       <div
                         class="text-h6 text-weight-light"
-                        style="width: 100px"
+                        style="width: 200px"
                       >
                         {{
                           useGlobalStore().token_list.find(
