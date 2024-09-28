@@ -236,7 +236,6 @@ function apply_filter() {
               />
             </q-item-section>
           </q-item>
-
           <q-item tag="label" v-ripple>
             <q-item-section>
               <q-item-label>S&B Member Offers</q-item-label>

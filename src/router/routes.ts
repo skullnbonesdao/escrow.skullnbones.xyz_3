@@ -9,7 +9,9 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/exchange',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/ExchangePage.vue') }],
+    children: [
+      { path: '', component: () => import('pages/ExchangePage2.vue') },
+    ],
   },
   {
     path: '/manage',

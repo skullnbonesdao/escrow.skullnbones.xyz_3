@@ -41,7 +41,7 @@
       side="left"
       @click.capture="leftDrawerClick"
     >
-      <FilterEscrows />
+      <FilterEscrows2 />
     </q-drawer>
 
     <q-drawer
@@ -111,7 +111,7 @@ import { useGlobalStore } from 'stores/globalStore';
 
 import { copy_to_clipboard } from 'src/functions/copy_to_clipboard';
 import { WalletMultiButton } from 'solana-wallets-vue';
-import FilterEscrows from 'components/filters/FilterEscrows.vue';
+import FilterEscrows2 from 'components/filters/FilterEscrows2.vue';
 import EscrowTakeView from 'components/views/EscrowTakeView.vue';
 import { useQuasar } from 'quasar';
 import { useEscrowStore } from 'stores/escrowStore';
