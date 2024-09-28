@@ -41,8 +41,8 @@ watchDeep(
         inline-label
         class="q-pb-sm"
       >
-        <q-tab name="buy" label="Buy" class="bg-buy" />
         <q-tab name="sell" label="Sell" class="bg-sell" />
+        <q-tab name="buy" label="Buy" class="bg-buy" />
       </q-tabs>
     </q-card-section>
     <q-separator />
