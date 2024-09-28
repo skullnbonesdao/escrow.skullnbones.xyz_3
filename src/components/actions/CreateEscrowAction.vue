@@ -2,6 +2,7 @@
 import { useWallet, WalletMultiButton } from 'solana-wallets-vue';
 import { useQuasar } from 'quasar';
 import { useWorkspace } from 'src/adapter/adapterPrograms';
+import * as anchor from '@coral-xyz/anchor';
 import BN from 'bn.js';
 import {
   Connection,
@@ -41,7 +42,10 @@ async function buildTransaction() {
 
   try {
     let transaction = new Transaction();
-    const seed = new BN(window.crypto.getRandomValues(new Uint8Array(8)));
+
+    const seed = new anchor.BN(
+      window.crypto.getRandomValues(new Uint8Array(8)),
+    );
 
     const escrow = PublicKey.findProgramAddressSync(
       [
