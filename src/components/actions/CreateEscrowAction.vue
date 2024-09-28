@@ -49,20 +49,20 @@ async function buildTransaction() {
 
     const escrow = PublicKey.findProgramAddressSync(
       [
-        anchor.Buffer.from('escrow'),
+        Buffer.from('escrow'),
         useWallet().publicKey.value!.toBytes(),
-        seed.toArrayLike(anchor.Buffer).reverse(),
+        seed.toArrayLike(Buffer).reverse(),
       ],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const vault = PublicKey.findProgramAddressSync(
-      [anchor.Buffer.from('vault'), escrow.toBuffer()],
+      [Buffer.from('vault'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const auth = PublicKey.findProgramAddressSync(
-      [anchor.Buffer.from('auth'), escrow.toBuffer()],
+      [Buffer.from('auth'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
