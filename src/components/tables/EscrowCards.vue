@@ -68,7 +68,7 @@ function group_rows(
     },
     {} as Record<string, I_Escrows[]>,
   );
-  console.log(groupedData);
+
   return groupedData;
 }
 
@@ -96,9 +96,10 @@ const data = computed(() => useEscrowStore().escrows_cards);
 <template>
   <div
     v-if="!Object.entries(data!).every(([key, value]) => value.length == 0)"
-    class="q-gutter-y-md q-ma-sm"
+    class="q-gutter-y-xs"
   >
     <q-card
+      square
       flat
       v-for="[groupKey, groupValue] of Object.entries(data!).filter(
         ([key, value]) => {

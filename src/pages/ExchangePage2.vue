@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useGlobalStore } from 'src/stores/globalStore';
-import EscrowTable from 'components/tables/EscrowTable.vue';
+
 import { onMounted, ref } from 'vue';
 import { useQuasar } from 'quasar';
 import FilterEscrows2 from 'components/filters/FilterEscrows2.vue';
@@ -35,6 +35,11 @@ const thumbStyle = ref({
       visible
       class="col"
     >
+      <q-list v-if="useQuasar().screen.lt.md" bordered class="bg-dark">
+        <q-expansion-item expand-separator icon="search" label="Filters">
+          <FilterEscrows2 />
+        </q-expansion-item>
+      </q-list>
       <EscrowCards v-if="useGlobalStore().is_init" />
     </q-scroll-area>
   </q-page>

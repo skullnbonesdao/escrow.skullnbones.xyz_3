@@ -2,7 +2,8 @@
 import { useWallet, WalletMultiButton } from 'solana-wallets-vue';
 import { useQuasar } from 'quasar';
 import { useWorkspace } from 'src/adapter/adapterPrograms';
-import BN from 'bn.js';
+import * as anchor from '@coral-xyz/anchor';
+
 import {
   Connection,
   PublicKey,
@@ -41,24 +42,27 @@ async function buildTransaction() {
 
   try {
     let transaction = new Transaction();
-    const seed = new BN(window.crypto.getRandomValues(new Uint8Array(8)));
+
+    const seed = new anchor.web3.BN(
+      window.crypto.getRandomValues(new Uint8Array(8)),
+    );
 
     const escrow = PublicKey.findProgramAddressSync(
       [
-        Buffer.from('escrow'),
+        anchor.web3.Buffer.from('escrow'),
         useWallet().publicKey.value!.toBytes(),
-        seed.toArrayLike(Buffer).reverse(),
+        seed.toArrayLike(anchor.web3.Buffer).reverse(),
       ],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const vault = PublicKey.findProgramAddressSync(
-      [Buffer.from('vault'), escrow.toBuffer()],
+      [anchor.web3.Buffer.from('vault'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const auth = PublicKey.findProgramAddressSync(
-      [Buffer.from('auth'), escrow.toBuffer()],
+      [anchor.web3.Buffer.from('auth'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
@@ -125,23 +129,23 @@ async function buildTransaction() {
     let escrow_transaction = await pg_escrow?.value.methods
       .initialize(
         seed,
-        new BN(
+        new anchor.web3.BN(
           (
             useEscrowStore().new_escrow.deposit_amount *
             10 ** useEscrowStore().new_escrow.deposit_token.decimals
           ).toFixed(0),
         ),
-        new BN(
+        new anchor.web3.BN(
           (
             useEscrowStore().new_escrow.request_amount *
             10 ** useEscrowStore().new_escrow.request_token.decimals
           ).toFixed(0),
         ),
-        new BN(useEscrowStore().new_escrow.closing_timestamp),
-        useEscrowStore().new_escrow.allow_partial_fill,
-        useEscrowStore().new_escrow.only_whitelist,
-        useEscrowStore().new_escrow.allow_partial_fill
-          ? useEscrowStore().new_escrow.slippage
+        new anchor.web3.BN(useEscrowStore().new_escrow.closing_timestamp),
+        useEscrowStore().new_escrow.allow_partial_fill as any,
+        useEscrowStore().new_escrow.only_whitelist as any,
+        (useEscrowStore().new_escrow.allow_partial_fill as any)
+          ? (useEscrowStore().new_escrow.slippage as any)
           : 0,
       )
       .accounts({
