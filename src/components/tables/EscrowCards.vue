@@ -116,22 +116,28 @@ const data = computed(() => useEscrowStore().escrows_cards);
                 outline
                 class="col text-center q-ma-sm"
                 :class="`bg-${useEscrowStore().filter_cards.by}`"
-                ><div style="width: 70px" class="q-gutter-y-xs">
+                ><div
+                  style="width: 100px"
+                  class="row items-center q-gutter-x-sm"
+                >
                   <div class="text-white">
                     {{ useEscrowStore().filter_cards.by.toUpperCase() }}
                   </div>
-                  <TokenIcon
-                    class=""
-                    size="sm"
-                    :src="
-                      get_token_imageURL_form_mint(
-                        useGlobalStore().token_list.find(
-                          (t) => t.symbol == groupKey,
-                        )?.address,
-                      )
-                    "
-                  />
-                  <div class="text-white">{{ groupKey.split('-')[0] }}</div>
+                  <q-separator vertical />
+                  <div class="col q-gutter-y-xs">
+                    <TokenIcon
+                      class=""
+                      size="sm"
+                      :src="
+                        get_token_imageURL_form_mint(
+                          useGlobalStore().token_list.find(
+                            (t) => t.symbol == groupKey,
+                          )?.address,
+                        )
+                      "
+                    />
+                    <div class="text-white">{{ groupKey.split('-')[0] }}</div>
+                  </div>
                 </div>
               </q-badge>
             </div>
@@ -217,9 +223,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                   </q-item-section>
 
                   <q-item-section>
-                    <div class="row items-center">
-                      <div>{{ innerGroupKey }}</div>
-                    </div>
+                    <div class="row items-center"></div>
                   </q-item-section>
 
                   <q-item-section side>
