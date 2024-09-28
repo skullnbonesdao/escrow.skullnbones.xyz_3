@@ -41,6 +41,9 @@
       side="left"
       @click.capture="leftDrawerClick"
     >
+      <q-separator class="q-mt-xs" />
+      <div class="col-2 text-h6 text-center">Filter</div>
+      <q-separator />
       <FilterEscrows2 />
     </q-drawer>
 
