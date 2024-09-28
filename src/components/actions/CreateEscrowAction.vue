@@ -43,26 +43,26 @@ async function buildTransaction() {
   try {
     let transaction = new Transaction();
 
-    const seed = new anchor.web3.BN(
+    const seed = new anchor.BN(
       window.crypto.getRandomValues(new Uint8Array(8)),
     );
 
     const escrow = PublicKey.findProgramAddressSync(
       [
-        anchor.web3.Buffer.from('escrow'),
+        anchor.Buffer.from('escrow'),
         useWallet().publicKey.value!.toBytes(),
-        seed.toArrayLike(anchor.web3.Buffer).reverse(),
+        seed.toArrayLike(anchor.Buffer).reverse(),
       ],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const vault = PublicKey.findProgramAddressSync(
-      [anchor.web3.Buffer.from('vault'), escrow.toBuffer()],
+      [anchor.Buffer.from('vault'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
     const auth = PublicKey.findProgramAddressSync(
-      [anchor.web3.Buffer.from('auth'), escrow.toBuffer()],
+      [anchor.Buffer.from('auth'), escrow.toBuffer()],
       <PublicKey>pg_escrow?.value.programId,
     )[0];
 
@@ -129,19 +129,19 @@ async function buildTransaction() {
     let escrow_transaction = await pg_escrow?.value.methods
       .initialize(
         seed,
-        new anchor.web3.BN(
+        new anchor.BN(
           (
             useEscrowStore().new_escrow.deposit_amount *
             10 ** useEscrowStore().new_escrow.deposit_token.decimals
           ).toFixed(0),
         ),
-        new anchor.web3.BN(
+        new anchor.BN(
           (
             useEscrowStore().new_escrow.request_amount *
             10 ** useEscrowStore().new_escrow.request_token.decimals
           ).toFixed(0),
         ),
-        new anchor.web3.BN(useEscrowStore().new_escrow.closing_timestamp),
+        new anchor.BN(useEscrowStore().new_escrow.closing_timestamp),
         useEscrowStore().new_escrow.allow_partial_fill as any,
         useEscrowStore().new_escrow.only_whitelist as any,
         (useEscrowStore().new_escrow.allow_partial_fill as any)
