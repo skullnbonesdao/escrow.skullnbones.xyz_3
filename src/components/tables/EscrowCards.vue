@@ -137,14 +137,21 @@ const data = computed(() => useEscrowStore().escrows_cards);
                         )
                       "
                     />
-                    <div class="text-white">{{ groupKey.split('-')[0] }}</div>
+                    <div class="text-white">{{ groupKey }}</div>
                   </div>
                 </div>
               </q-badge>
             </div>
           </q-item-section>
 
-          <q-item-section> </q-item-section>
+          <q-item-section>
+            <div class="text-subtitle1">
+              {{
+                useGlobalStore().token_list.find((t) => t.symbol == groupKey)
+                  .name
+              }}
+            </div>
+          </q-item-section>
 
           <q-item-section side>
             <div class="row items-center">
@@ -194,7 +201,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                           </div>
                         </div>
                       </q-badge>
-                      <q-icon name="chevron_right" />
+                      <q-icon size="md" name="chevron_right" />
                       <q-badge
                         color="transparent"
                         outline
@@ -222,9 +229,30 @@ const data = computed(() => useEscrowStore().escrows_cards);
                       </q-badge>
                     </div>
                   </q-item-section>
-
-                  <q-item-section>
-                    <div class="row items-center"></div>
+                  <q-item-section v-if="!is_mobile">
+                    <div class="row items-center justify-evenly">
+                      <div
+                        class="text-h6 text-weight-light"
+                        style="width: 100px"
+                      >
+                        {{
+                          useGlobalStore().token_list.find(
+                            (t) => t.symbol == innerGroupKey.split('-')[1],
+                          ).name
+                        }}
+                      </div>
+                      <q-icon size="md" name="chevron_right" />
+                      <div
+                        class="text-h6 text-weight-light"
+                        style="width: 100px"
+                      >
+                        {{
+                          useGlobalStore().token_list.find(
+                            (t) => t.symbol == innerGroupKey.split('-')[0],
+                          ).name
+                        }}
+                      </div>
+                    </div>
                   </q-item-section>
 
                   <q-item-section side>
@@ -243,6 +271,13 @@ const data = computed(() => useEscrowStore().escrows_cards);
                       :rows="innerGroupValue"
                       :columns="[
                         {
+                          name: 'options',
+                          align: 'left',
+                          label: 'Options',
+                          field: 'account',
+                          sortable: true,
+                        },
+                        {
                           name: 'escrow',
                           label: 'Escrow',
                           align: 'left',
@@ -258,13 +293,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                           format: (val, row) => format_address(`${val.maker}`),
                           sortable: true,
                         },
-                        {
-                          name: 'options',
-                          align: 'left',
-                          label: 'Options',
-                          field: 'account',
-                          sortable: true,
-                        },
+
                         {
                           name: 'price',
                           label: 'Price per Unit',

@@ -45,7 +45,7 @@ export const useEscrowStore = defineStore('escrowStore', {
     escrow_selected: undefined as I_Escrows | undefined,
     filter_cards: {
       treeKeys: ['ATLAS', 'POLIS', 'USDC', 'PURI', 'DACB', 'TKS'],
-      by: 'buy',
+      by: 'sell',
       filter_type: 'type_public',
       extra_filter: ['self', 'fill_partial', 'fill_full'],
     },
