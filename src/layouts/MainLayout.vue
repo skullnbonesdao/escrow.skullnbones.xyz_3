@@ -41,8 +41,7 @@
       side="left"
       @click.capture="leftDrawerClick"
     >
-      <q-separator class="q-mt-xs" />
-      <div class="col-2 text-h6 text-center">Filter</div>
+      <div class="col-2 text-h5 q-ma-sm text-center">Filter</div>
       <q-separator />
       <FilterEscrows2 />
     </q-drawer>
@@ -54,7 +53,7 @@
       side="right"
     >
       <div class="q-mb-xs">
-        <q-tabs class="bg-secondary">
+        <q-tabs>
           <q-tab
             @click="useGlobalStore().showRightDrawer = false"
             icon="chevron_right"
@@ -81,6 +80,7 @@
             icon="share"
           ></q-tab>
         </q-tabs>
+        <q-separator />
       </div>
       <EscrowTakeView />
 
