@@ -89,7 +89,7 @@ async function buildTransaction() {
         make_ata_instruction(
           maker_ata,
           new PublicKey(
-            useEscrowStore().escrow_selected?.account.depositToken ?? '',
+            <PublicKey>useEscrowStore().escrow_selected?.account.depositToken,
           ),
         ),
       );
@@ -111,7 +111,7 @@ async function buildTransaction() {
     ) {
       transaction.add(
         make_ata_instruction(
-          maker_ata,
+          maker_ata_request,
           <PublicKey>useEscrowStore().escrow_selected?.account.requestToken,
         ),
       );
