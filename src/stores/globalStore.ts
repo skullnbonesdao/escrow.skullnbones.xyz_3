@@ -57,7 +57,7 @@ function addTokenToTree(tree: any[], token: I_Token) {
       // If we're at the last level, add the token as a child
       if (index === token.tree.length - 1) {
         newNode.children.push({
-          label: token.name,
+          label: token.symbol,
           avatar: token.logoURI,
           token: token,
         } as never);
