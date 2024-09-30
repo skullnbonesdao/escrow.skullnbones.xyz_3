@@ -52,8 +52,9 @@
       v-if="useGlobalStore().showRightDrawer"
       side="right"
     >
-      <div class="q-mb-xs">
+      <div class="q-mb-md">
         <q-tabs>
+          <q-separator vertical />
           <q-tab
             @click="useGlobalStore().showRightDrawer = false"
             icon="chevron_right"
