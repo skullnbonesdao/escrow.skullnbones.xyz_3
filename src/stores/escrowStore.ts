@@ -6,6 +6,7 @@ import { useWorkspace } from 'src/adapter/adapterPrograms';
 import { useGlobalStore } from 'stores/globalStore';
 import { NULL_ADDRESS } from 'stores/constants';
 import { useWallet } from 'solana-wallets-vue';
+import { useLocalStorage } from '@vueuse/core';
 
 export interface I_Escrows {
   publicKey: PublicKey;
@@ -44,8 +45,11 @@ export const useEscrowStore = defineStore('escrowStore', {
 
     escrow_selected: undefined as I_Escrows | undefined,
     filter_cards: {
-      treeKeys: ['ATLAS', 'POLIS', 'USDC', 'PURI', 'DACB', 'TKS'],
-      by: 'sell',
+      treeKeys: useLocalStorage(
+        'filter_cards.treeKeys',
+        useGlobalStore().token_list.flatMap((t) => t.symbol),
+      ),
+      by: 'buy',
       filter_type: 'type_public',
       extra_filter: ['self', 'fill_partial', 'fill_full'],
     },
@@ -92,7 +96,8 @@ export const useEscrowStore = defineStore('escrowStore', {
         const isNotSelf =
           hasSelf || maker !== useWallet().publicKey.value?.toString();
         const isNotFilled =
-          hasFilled || (tokensDepositRemaining / tokensDepositInit) * 100 > 0;
+          hasFilled ||
+          (tokensDepositRemaining / tokensDepositInit) * 100 > 0.0001;
 
         // Filter based on filter_type.value
         let passesFilterType = true;

@@ -20,6 +20,8 @@ import {
   getPriceByPairName,
 } from 'src/functions/get_price_by_side';
 import { Escrow } from 'src/adapter/escrow_gen/accounts';
+import { PublicKey } from '@solana/web3.js';
+import { format_number } from '../../functions/format_number';
 
 const decimals = 9;
 
@@ -90,6 +92,47 @@ function make_take_view(escrow: I_Escrows) {
   } else router.push(`/details/${escrow.publicKey.toString()}`);
 }
 
+function total_amount(
+  escrows: I_Escrows[],
+  symbol: string,
+  side: 'buy' | 'sell',
+): string {
+  let mint = new PublicKey(
+    useGlobalStore().token_list.find((token) => token.symbol == symbol)
+      ?.address ?? '',
+  );
+  let value = escrows
+    .flatMap((escrow) => {
+      if (escrow.account.depositToken == mint)
+        if (side == 'buy')
+          return escrow.account.tokensDepositRemaining.toNumber();
+        else return 1 / escrow.account.tokensDepositRemaining.toNumber();
+      else {
+        if (side == 'sell')
+          return (
+            escrow.account.price *
+            escrow.account.tokensDepositRemaining *
+            10 **
+              -useGlobalStore().token_list.find(
+                (token) =>
+                  token.address == escrow.account.depositToken.toString(),
+              )?.decimals
+          );
+        else
+          return (
+            escrow.account.tokensDepositRemaining *
+            10 **
+              -useGlobalStore().token_list.find(
+                (token) =>
+                  token.address == escrow.account.depositToken.toString(),
+              )?.decimals
+          );
+      }
+    })
+    .reduce((acc, curr) => acc + curr, 0) as number;
+  return format_number(value, 0);
+}
+
 const data = computed(() => useEscrowStore().escrows_cards);
 </script>
 
@@ -137,6 +180,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                         )
                       "
                     />
+
                     <div class="text-white">{{ groupKey }}</div>
                   </div>
                 </div>
@@ -145,11 +189,26 @@ const data = computed(() => useEscrowStore().escrows_cards);
           </q-item-section>
 
           <q-item-section>
-            <div class="text-h6 text-weight-light" style="width: 200px">
-              {{
-                useGlobalStore().token_list.find((t) => t.symbol == groupKey)
-                  .name
-              }}
+            <div class="row items-center q-gutter-x-sm">
+              <div
+                class="text-h6 text-weight-thin text-right"
+                style="width: 150px"
+              >
+                {{
+                  total_amount(
+                    groupValue,
+                    groupKey,
+                    useEscrowStore().filter_cards.by,
+                  )
+                }}
+              </div>
+
+              <div class="text-h5 text-weight-light" style="width: 200px">
+                {{
+                  useGlobalStore().token_list.find((t) => t.symbol == groupKey)
+                    .name
+                }}
+              </div>
             </div>
           </q-item-section>
 
@@ -231,26 +290,54 @@ const data = computed(() => useEscrowStore().escrows_cards);
                   </q-item-section>
                   <q-item-section v-if="!is_mobile">
                     <div class="row items-center justify-evenly">
-                      <div
-                        class="text-h6 text-weight-light"
-                        style="width: 200px"
-                      >
-                        {{
-                          useGlobalStore().token_list.find(
-                            (t) => t.symbol == innerGroupKey.split('-')[1],
-                          ).name
-                        }}
+                      <div class="row items-center q-gutter-x-sm">
+                        <div
+                          class="text-h6 text-weight-thin text-right"
+                          style="width: 150px"
+                        >
+                          {{
+                            total_amount(
+                              innerGroupValue,
+                              innerGroupKey.split('-')[1],
+                              'sell',
+                            )
+                          }}
+                        </div>
+                        <div
+                          class="text-h6 text-weight-light"
+                          style="width: 200px"
+                        >
+                          {{
+                            useGlobalStore().token_list.find(
+                              (t) => t.symbol == innerGroupKey.split('-')[1],
+                            ).name
+                          }}
+                        </div>
                       </div>
                       <q-icon size="md" name="chevron_right" />
-                      <div
-                        class="text-h6 text-weight-light"
-                        style="width: 200px"
-                      >
-                        {{
-                          useGlobalStore().token_list.find(
-                            (t) => t.symbol == innerGroupKey.split('-')[0],
-                          ).name
-                        }}
+                      <div class="row items-center q-gutter-x-sm">
+                        <div
+                          class="text-h6 text-weight-thin text-right"
+                          style="width: 150px"
+                        >
+                          {{
+                            total_amount(
+                              innerGroupValue,
+                              innerGroupKey.split('-')[0],
+                              'buy',
+                            )
+                          }}
+                        </div>
+                        <div
+                          class="text-h6 text-weight-light"
+                          style="width: 200px"
+                        >
+                          {{
+                            useGlobalStore().token_list.find(
+                              (t) => t.symbol == innerGroupKey.split('-')[0],
+                            ).name
+                          }}
+                        </div>
                       </div>
                     </div>
                   </q-item-section>
@@ -293,7 +380,13 @@ const data = computed(() => useEscrowStore().escrows_cards);
                           format: (val, row) => format_address(`${val.maker}`),
                           sortable: true,
                         },
-
+                        {
+                          name: 'volume',
+                          label: 'Size',
+                          field: 'account',
+                          format: (val: Escrow, row) => `${val}`,
+                          sortable: true,
+                        },
                         {
                           name: 'price',
                           label: 'Price per Unit',
@@ -315,7 +408,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                               class="row items-center q-gutter-x-xs justify-end"
                             >
                               <div>
-                                {{ parseFloat(props.value).toFixed(5) }}
+                                {{ format_number(parseFloat(props.value), 5) }}
                               </div>
                               <TokenIcon
                                 class=""
@@ -334,7 +427,9 @@ const data = computed(() => useEscrowStore().escrows_cards);
                               class="row items-center q-gutter-x-xs justify-end"
                             >
                               <div>
-                                {{ (1 / parseFloat(props.value)).toFixed(5) }}
+                                {{
+                                  format_number(1 / parseFloat(props.value), 5)
+                                }}
                               </div>
                               <TokenIcon
                                 class=""
@@ -429,6 +524,44 @@ const data = computed(() => useEscrowStore().escrows_cards);
                                 size="xs"
                                 :escrow="props.row"
                               />
+                            </div>
+                          </div>
+                        </q-td>
+
+                        <q-td
+                          @click="make_take_view(props.row)"
+                          v-else-if="props.col.name == 'volume'"
+                          :props="props"
+                        >
+                          <div class="col">
+                            <div>
+                              {{
+                                format_number(
+                                  props.row.account.price *
+                                    props.row.account.tokensDepositRemaining *
+                                    10 **
+                                      -useGlobalStore().token_list.find(
+                                        (t) =>
+                                          t.address ==
+                                          props.row.account.depositToken,
+                                      ).decimals,
+                                  1,
+                                )
+                              }}
+                            </div>
+                            <div>
+                              {{
+                                format_number(
+                                  props.row.account.tokensDepositRemaining *
+                                    10 **
+                                      -useGlobalStore().token_list.find(
+                                        (t) =>
+                                          t.address ==
+                                          props.row.account.depositToken,
+                                      ).decimals,
+                                  1,
+                                )
+                              }}
                             </div>
                           </div>
                         </q-td>
