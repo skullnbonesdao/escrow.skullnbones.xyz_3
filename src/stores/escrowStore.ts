@@ -96,36 +96,6 @@ export const useEscrowStore = defineStore('escrowStore', {
         const recipient = escrow.account.recipient?.toString() ?? '';
         const onlyWhitelist = escrow.account.onlyWhitelist;
 
-        //TreeKeys
-
-        //Filter for strings
-        const hasNameDeposit = useGlobalStore()
-          .token_list.find(
-            (t) => t.address == escrow.account.depositToken.toString(),
-          )
-          ?.name.toLowerCase()
-          .includes(this.filter_cards.filter_string.toLowerCase());
-        const hasNameRequest = useGlobalStore()
-          .token_list.find(
-            (t) => t.address == escrow.account.requestToken.toString(),
-          )
-          ?.name.toLowerCase()
-          .includes(this.filter_cards.filter_string.toLowerCase());
-
-        const hasSymbolDepost = useGlobalStore()
-          .token_list.find(
-            (t) => t.address == escrow.account.depositToken.toString(),
-          )
-          ?.symbol.toLowerCase()
-          .includes(this.filter_cards.filter_string.toLowerCase());
-
-        const hasSymbolRequest = useGlobalStore()
-          .token_list.find(
-            (t) => t.address == escrow.account.requestToken.toString(),
-          )
-          ?.symbol.toLowerCase()
-          .includes(this.filter_cards.filter_string.toLowerCase());
-
         // Filter based on extra_filter
         const isNotPartialFill = hasFillFull || allowPartialFill !== false;
         const isNotFullFill = hasFillPartial || allowPartialFill !== true;
@@ -159,15 +129,11 @@ export const useEscrowStore = defineStore('escrowStore', {
           isNotFullFill &&
           isNotSelf &&
           isNotFilled &&
-          passesFilterType &&
-          (hasNameRequest ||
-            hasNameDeposit ||
-            hasSymbolRequest ||
-            hasSymbolDepost)
+          passesFilterType
         );
       });
 
-      this.escrows_cards = filtered_escrow?.reduce(
+      let data: any = filtered_escrow?.reduce(
         (acc, item) => {
           const { depositToken, requestToken } = item.account;
 
@@ -204,7 +170,24 @@ export const useEscrowStore = defineStore('escrowStore', {
         },
         {} as Record<string, { buy: I_Escrows[]; sell: I_Escrows[] }>,
       );
-      console.log(this.escrows_cards), console.log('== UPDATED FILTER');
+
+      if (this.filter_cards.filter_string)
+        data = Object.fromEntries(
+          Object.entries(data).filter(([tokenSymbol, _]) => {
+            const INCLUDES_SYMBOL = tokenSymbol
+              .toLowerCase()
+              .includes(this.filter_cards.filter_string.toLowerCase());
+            const INCLUDES_NAME = useGlobalStore()
+              .token_list.find((t) => t.symbol == tokenSymbol)
+              ?.name.toLowerCase()
+              .includes(this.filter_cards.filter_string.toLowerCase());
+            return INCLUDES_SYMBOL || INCLUDES_NAME;
+          }),
+        );
+
+      this.escrows_cards = data;
+      console.log(this.escrows_cards);
+      console.log('== UPDATED FILTER');
     },
   },
 });
