@@ -33,29 +33,6 @@ watchDeep(
 
 <template>
   <q-card flat>
-    <q-card-section>
-      <div class="col-2 text-overline">Side</div>
-      <q-tabs
-        align="justify"
-        v-model="useEscrowStore().filter_cards.by"
-        inline-label
-        class="q-pb-sm"
-      >
-        <q-tab name="sell" label="Sell" class="bg-sell" />
-        <q-tab name="buy" label="Buy" class="bg-buy" />
-      </q-tabs>
-    </q-card-section>
-    <q-separator />
-    <q-card-section>
-      <div class="col-2 text-overline">Asset</div>
-      <q-tree
-        :tick-strategy="'leaf'"
-        :nodes="useGlobalStore().getAsTree"
-        accordion
-        node-key="label"
-        v-model:ticked="useEscrowStore().filter_cards.treeKeys"
-    /></q-card-section>
-    <q-separator />
     <q-card-section :class="useQuasar().screen.lt.md ? 'row' : 'col'">
       <div class="col-2 text-overline">Offer Type</div>
 

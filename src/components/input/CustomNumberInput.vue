@@ -53,9 +53,7 @@ const config = ref({
 watch(
   () => props.init_value,
   () => {
-    value.value = parseFloat(props.init_value.toString()).toFixed(
-      config.value.precision,
-    );
+    value.value = props.init_value;
   },
 );
 
@@ -66,9 +64,7 @@ watch(
   },
 );
 
-const value = ref(
-  parseFloat(props.init_value.toString()).toFixed(config.value.precision),
-);
+const value = ref(props.init_value);
 const value_formatted = computed({
   // getter
   get() {
@@ -76,11 +72,7 @@ const value_formatted = computed({
   },
   // setter
   set(newValue) {
-    let valueString = parseFloat(newValue.toString()).toFixed(
-      config.value.precision,
-    );
-
-    value.value = valueString;
+    value.value = parseFloat(newValue);
     console.log(format(value.value, config.value));
     emits('valueChange', value.value);
   },

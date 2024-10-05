@@ -35,42 +35,54 @@
     </q-header>
 
     <q-drawer
+      bordered
       :mini="useGlobalStore().leftDrawerMini"
       show-if-above
       v-if="useGlobalStore().showLeftDrawer"
       side="left"
       @click.capture="leftDrawerClick"
     >
-      <div class="col-2 text-h5 q-ma-sm text-center">Filter</div>
+      <q-btn
+        align="left"
+        class="full-width text-h5"
+        icon="chevron_left"
+        label="Filter"
+        @click="useGlobalStore().showLeftDrawer = false"
+      />
+
       <q-separator />
       <FilterEscrows2 />
     </q-drawer>
 
     <q-drawer
+      bordered
       width="450"
       show-if-above
       v-if="useGlobalStore().showRightDrawer"
       side="right"
     >
       <div class="q-mb-md">
-        <q-tabs>
-          <q-separator vertical />
-          <q-tab
-            @click="useGlobalStore().showRightDrawer = false"
-            icon="chevron_right"
-          ></q-tab>
-          <q-separator vertical />
-          <q-route-tab
+        <q-btn
+          align="right"
+          class="full-width text-h5"
+          icon-right="chevron_right"
+          label="Exchange"
+          @click="useGlobalStore().showRightDrawer = false"
+        />
+        <q-separator />
+        <div class="row">
+          <q-btn
+            class="col"
             icon="aspect_ratio"
             :to="
               '/details/' +
               useEscrowStore().escrow_selected?.publicKey.toString()
             "
-            exact
           />
           <q-separator vertical />
-          <q-tab
-            ripple="false"
+          <q-btn
+            class="col text-h6"
+            icon="share"
             @click="
               copy_to_clipboard(
                 'https://escrow.skullnbones.xyz/#/details/' +
@@ -78,23 +90,11 @@
                   'not-found',
               )
             "
-            icon="share"
-          ></q-tab>
-        </q-tabs>
+          />
+        </div>
         <q-separator />
       </div>
       <EscrowTakeView />
-
-      <!--      <div class="q-mini-drawer-hide absolute" style="top: 10px; left: -17px">-->
-      <!--        <q-btn-->
-      <!--          dense-->
-      <!--          round-->
-      <!--          unelevated-->
-      <!--          color="accent"-->
-      <!--          icon="chevron_right"-->
-      <!--          @click="useGlobalStore().showRightDrawer = false"-->
-      <!--        />-->
-      <!--      </div>-->
     </q-drawer>
 
     <q-page-container>
