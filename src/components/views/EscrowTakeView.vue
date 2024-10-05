@@ -13,6 +13,7 @@ import TokenIcon from 'components/elements/TokenIcon.vue';
 import CancelEscrow from 'components/actions/CancelEscrowAction.vue';
 import { useWallet } from 'solana-wallets-vue';
 import TransactionHistoryElement from 'components/elements/TransactionHistoryElement.vue';
+import { laMusicSolid } from '@quasar/extras/line-awesome';
 
 const token_deposit_info = computed(() => {
   return useGlobalStore().token_list.find(
@@ -31,16 +32,13 @@ const token_request_info = computed(() => {
 
 const amount_to_buy = ref(0);
 const amount_to_sell = ref(0);
-
-calc_percent_amount(1);
-
-onMounted(() => {
-  calc_percent_amount(1);
-});
+onMounted(() => calc_percent_amount(1));
 
 watch(
-  () => useEscrowStore().escrow_selected,
+  () => useEscrowStore().escrow_selected?.publicKey,
   () => {
+    amount_to_buy.value = 0;
+    amount_to_sell.value = 0;
     calc_percent_amount(1);
   },
 );
