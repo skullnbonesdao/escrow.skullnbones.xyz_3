@@ -73,7 +73,6 @@ function getPagination(side: string) {
         v-if="groupValue[side]"
         flat
         hide-bottom
-        row-key="account"
         :pagination="getPagination(side)"
         :rows="groupValue[side]"
         :columns="[
