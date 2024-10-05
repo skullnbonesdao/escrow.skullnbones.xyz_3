@@ -6,6 +6,8 @@ import { I_Token } from 'stores/interfaces/I_TokenList';
 import TokenSelectInput from 'components/input/TokenSelectInput.vue';
 import { useEscrowStore } from 'stores/escrowStore';
 import TokensAvailable from 'components/elements/TokensAvailable.vue';
+import { useWallet } from 'solana-wallets-vue';
+import { userTokenStore } from 'stores/userTokenStore';
 
 const orderType = ref('buy');
 
@@ -18,6 +20,7 @@ const price_amount = ref<number>(0);
 onMounted(() => {
   useEscrowStore().new_escrow.deposit_amount = 0;
   useEscrowStore().new_escrow.request_amount = 0;
+  userTokenStore().load_token_accounts();
 });
 
 watch(
@@ -37,7 +40,7 @@ watch(
           useEscrowStore().new_escrow.deposit_token = price_token.value!;
         if (asset_amount.value)
           useEscrowStore().new_escrow.request_amount = asset_amount.value!;
-        if (price_amount.value && asset_amount.value!)
+        if (price_amount.value)
           useEscrowStore().new_escrow.deposit_amount =
             price_amount.value! * asset_amount.value!;
         break;
@@ -48,7 +51,7 @@ watch(
           useEscrowStore().new_escrow.request_token = price_token.value!;
         if (asset_amount.value)
           useEscrowStore().new_escrow.deposit_amount = asset_amount.value!;
-        if (price_amount.value && asset_amount.value!)
+        if (price_amount.value)
           useEscrowStore().new_escrow.request_amount =
             price_amount.value! * asset_amount.value!;
         break;
@@ -89,10 +92,11 @@ watch(
           }
         "
       />
+
       <TokensAvailable
         @amountClick="(amount) => (asset_amount = amount)"
         :token="asset_token"
-      />
+      />.
     </div>
 
     <div>
