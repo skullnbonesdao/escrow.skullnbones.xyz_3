@@ -173,7 +173,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
     </q-card-section>
   </q-card>
   <div
-    v-if="Object.keys(useEscrowStore().escrows_cards).length"
+    v-if="Object.keys(useEscrowStore().escrows_cards || {}).length"
     class="q-mt-xs q-gutter-y-xs"
   >
     <q-card

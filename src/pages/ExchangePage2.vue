@@ -42,12 +42,14 @@ const thumbStyle = ref({
         </q-expansion-item>
       </q-list>
       <div
-        v-if="useEscrowStore().is_loading"
+        v-if="
+          useEscrowStore().is_loading || useEscrowStore().escrows_cards === {}
+        "
         class="row items-center q-ma-xl justify-center"
       >
         <q-spinner-gears color="primary" size="25em" />
       </div>
-      <EscrowCards2 v-else-if="useGlobalStore().is_init" />
+      <EscrowCards2 v-else />
     </q-scroll-area>
   </q-page>
 </template>
