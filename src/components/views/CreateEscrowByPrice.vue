@@ -96,7 +96,7 @@ watch(
       <TokensAvailable
         @amountClick="(amount) => (asset_amount = amount)"
         :token="asset_token"
-      />.
+      />
     </div>
 
     <div>
