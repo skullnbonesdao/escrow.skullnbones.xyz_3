@@ -162,8 +162,8 @@ const data = computed(() => useEscrowStore().escrows_cards);
         filled
         square
         debounce="500"
-        label="Name | Symbol"
-        placeholder="Search"
+        label="Search"
+        placeholder="Name | Symbol"
         v-model="useEscrowStore().filter_cards.filter_string"
       >
         <template v-slot:append>
