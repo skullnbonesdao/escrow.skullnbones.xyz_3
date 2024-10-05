@@ -33,6 +33,21 @@ function make_take_view(escrow: I_Escrows) {
     }
   } else router.push(`/details/${escrow.publicKey.toString()}`);
 }
+
+function getPagination(side: string) {
+  if (side === 'buy') {
+    return {
+      rowsPerPage: 0,
+      sortBy: 'price',
+      descending: false,
+    };
+  } else
+    return {
+      rowsPerPage: 0,
+      sortBy: 'price',
+      descending: true,
+    };
+}
 </script>
 
 <template>
@@ -58,7 +73,7 @@ function make_take_view(escrow: I_Escrows) {
         v-if="groupValue[side]"
         flat
         hide-bottom
-        :rows-per-page-options="[0]"
+        :pagination="getPagination(side)"
         :rows="groupValue[side]"
         :columns="[
           {
@@ -115,10 +130,9 @@ function make_take_view(escrow: I_Escrows) {
           {
             name: 'price',
             label: 'Price per Unit',
-            field: 'account',
-            sort: (a: Escrow, b: Escrow, rowA, rowB) =>
-              parseFloat(a.price.toString()) - parseFloat(b.price.toString()),
-            format: (val: Escrow, row) => `${val.price.toString()}`,
+            field: (row) => row.account.price,
+            sort: (a: number, b: number, rowA, rowB) => a - b,
+            format: (val: number, row) => `${val.toString()}`,
             sortable: true,
           },
         ]"

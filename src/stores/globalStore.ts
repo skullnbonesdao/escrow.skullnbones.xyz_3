@@ -6,7 +6,6 @@ import { format } from 'v-money3';
 
 export const useGlobalStore = defineStore('globalStore', {
   state: () => ({
-    is_init: false,
     showLeftDrawer: false,
     leftDrawerMini: false,
     showRightDrawer: false,
