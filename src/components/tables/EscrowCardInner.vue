@@ -36,7 +36,10 @@ function make_take_view(escrow: I_Escrows) {
 </script>
 
 <template>
-  <div class="row q-pa-md q-gutter-x-sm">
+  <div
+    class="q-pa-md"
+    :class="is_mobile ? 'col q-gutter-y-sm' : 'row q-gutter-x-sm'"
+  >
     <q-card
       flat
       bordered
