@@ -29,6 +29,7 @@ export interface NewEscrowState {
 
 export const useEscrowStore = defineStore('escrowStore', {
   state: () => ({
+    is_loading: false,
     sort_direction: 'sell_ppu',
     new_escrow: {
       only_recipient: false,
@@ -60,9 +61,10 @@ export const useEscrowStore = defineStore('escrowStore', {
   getters: {},
   actions: {
     async load_all_escrows() {
+      this.is_loading = true;
       const data = await useWorkspace()?.pg_escrow.value.account.escrow.all();
       this.escrows = data as unknown as Array<I_Escrows>;
-      //this.escrow_selected = this.escrows[0];
+      this.is_loading = false;
     },
     async load_escrow(address: PublicKey) {
       console.log('load_escrow()');

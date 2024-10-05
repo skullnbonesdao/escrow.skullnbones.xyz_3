@@ -5,6 +5,7 @@ import { onMounted, ref } from 'vue';
 import { useQuasar } from 'quasar';
 import FilterEscrows2 from 'components/filters/FilterEscrows2.vue';
 import EscrowCards2 from 'components/tables/EscrowCards2.vue';
+import { useEscrowStore } from 'stores/escrowStore';
 
 onMounted(() => {
   useGlobalStore().showLeftDrawer = true;
@@ -40,7 +41,13 @@ const thumbStyle = ref({
           <FilterEscrows2 />
         </q-expansion-item>
       </q-list>
-      <EscrowCards2 v-if="useGlobalStore().is_init" />
+      <div
+        v-if="useEscrowStore().is_loading"
+        class="row items-center q-ma-xl justify-center"
+      >
+        <q-spinner-gears color="primary" size="25em" />
+      </div>
+      <EscrowCards2 v-else-if="useGlobalStore().is_init" />
     </q-scroll-area>
   </q-page>
 </template>
