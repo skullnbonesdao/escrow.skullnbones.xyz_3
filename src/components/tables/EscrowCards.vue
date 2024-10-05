@@ -133,6 +133,15 @@ function total_amount(
   return format_number(value, 0);
 }
 
+function lowest_prices(escrows: I_Escrows[], symbol: string) {
+  if (escrows.length == 0) return;
+
+  console.log(symbol);
+  console.log(escrows);
+  return escrows.map((escrow) => {
+    return [escrow.account.price, 1 / escrow.account.price];
+  });
+}
 const data = computed(() => useEscrowStore().escrows_cards);
 </script>
 
@@ -209,6 +218,53 @@ const data = computed(() => useEscrowStore().escrows_cards);
                     .name
                 }}
               </div>
+
+              <div
+                class="col justify-end row q-gutter-x-xs items-center"
+                v-if="
+                  useEscrowStore().filter_cards.by === 'buy'
+                    ? groupValue.every(
+                        (escrow) =>
+                          escrow.account.requestToken.toString() ===
+                          groupValue[0].account.requestToken.toString(),
+                      )
+                    : groupValue.every(
+                        (escrow) =>
+                          escrow.account.depositToken.toString() ===
+                          groupValue[0].account.depositToken.toString(),
+                      )
+                "
+              >
+                <div style="font-size: 10px">best price</div>
+                <div class="text-subtitle1 text-right" style="width: 100px">
+                  {{
+                    format_number(
+                      Math.min(
+                        ...lowest_prices(groupValue, groupKey).map(
+                          (arr) =>
+                            arr[
+                              useEscrowStore().filter_cards.by == 'buy' ? 0 : 1
+                            ],
+                        ),
+                      ),
+                      5,
+                    )
+                  }}
+                </div>
+                <TokenIcon
+                  size="xs"
+                  :src="
+                    useEscrowStore().filter_cards.by == 'buy'
+                      ? get_token_imageURL_form_mint(
+                          groupValue[0].account.requestToken.toString(),
+                        )
+                      : get_token_imageURL_form_mint(
+                          groupValue[0].account.depositToken.toString(),
+                        )
+                  "
+                />
+                {{}}
+              </div>
             </div>
           </q-item-section>
 
@@ -219,7 +275,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
             </div>
           </q-item-section>
         </template>
-        <q-card>
+        <q-card v-ripple>
           <q-card-section v-if="groupValue">
             <q-card
               class="q-mb-sm"
@@ -231,7 +287,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
               )"
               :key="innerGroupKey"
             >
-              <q-expansion-item>
+              <q-expansion-item default-opened>
                 <template v-slot:header>
                   <q-item-section avatar>
                     <div class="row items-center">
