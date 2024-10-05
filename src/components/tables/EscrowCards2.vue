@@ -143,6 +143,7 @@ function lowest_prices(escrows: I_Escrows[], symbol: string) {
     return [escrow.account.price, 1 / escrow.account.price];
   });
 }
+
 const data = computed(() => useEscrowStore().escrows_cards);
 </script>
 
@@ -160,7 +161,9 @@ const data = computed(() => useEscrowStore().escrows_cards);
         class="col"
         filled
         square
+        debounce="500"
         label="Name | Symbol"
+        placeholder="Search"
         v-model="useEscrowStore().filter_cards.filter_string"
       >
         <template v-slot:append>
