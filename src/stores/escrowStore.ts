@@ -45,15 +45,17 @@ export const useEscrowStore = defineStore('escrowStore', {
 
     escrow_selected: undefined as I_Escrows | undefined,
     filter_cards: {
+      filter_string: '',
       treeKeys: useLocalStorage(
         'filter_cards.treeKeys',
         useGlobalStore().token_list.flatMap((t) => t.symbol),
       ),
-      by: 'buy',
       filter_type: 'type_public',
       extra_filter: ['self', 'fill_partial', 'fill_full'],
     },
-    escrows_cards: {} as Record<string, I_Escrows[]> | undefined,
+    escrows_cards: {} as
+      | Record<string, { buy: I_Escrows[]; sell: I_Escrows[] }>
+      | undefined,
   }),
   getters: {},
   actions: {
@@ -71,13 +73,15 @@ export const useEscrowStore = defineStore('escrowStore', {
         )) as unknown as Escrow,
       };
     },
-    async apply_filter() {
+    apply_filter() {
       //Prepare filter
       const hasFillFull = this.filter_cards.extra_filter.includes('fill_full');
       const hasFillPartial =
         this.filter_cards.extra_filter.includes('fill_partial');
       const hasSelf = this.filter_cards.extra_filter.includes('self');
       const hasFilled = this.filter_cards.extra_filter.includes('filled');
+
+      //treeKey
 
       //Filter
       const filtered_escrow = this.escrows?.filter((escrow) => {
@@ -89,6 +93,36 @@ export const useEscrowStore = defineStore('escrowStore', {
           escrow?.account.tokensDepositInit?.toNumber() ?? 0;
         const recipient = escrow.account.recipient?.toString() ?? '';
         const onlyWhitelist = escrow.account.onlyWhitelist;
+
+        //TreeKeys
+
+        //Filter for strings
+        const hasNameDeposit = useGlobalStore()
+          .token_list.find(
+            (t) => t.address == escrow.account.depositToken.toString(),
+          )
+          ?.name.toLowerCase()
+          .includes(this.filter_cards.filter_string.toLowerCase());
+        const hasNameRequest = useGlobalStore()
+          .token_list.find(
+            (t) => t.address == escrow.account.requestToken.toString(),
+          )
+          ?.name.toLowerCase()
+          .includes(this.filter_cards.filter_string.toLowerCase());
+
+        const hasSymbolDepost = useGlobalStore()
+          .token_list.find(
+            (t) => t.address == escrow.account.depositToken.toString(),
+          )
+          ?.symbol.toLowerCase()
+          .includes(this.filter_cards.filter_string.toLowerCase());
+
+        const hasSymbolRequest = useGlobalStore()
+          .token_list.find(
+            (t) => t.address == escrow.account.requestToken.toString(),
+          )
+          ?.symbol.toLowerCase()
+          .includes(this.filter_cards.filter_string.toLowerCase());
 
         // Filter based on extra_filter
         const isNotPartialFill = hasFillFull || allowPartialFill !== false;
@@ -123,7 +157,11 @@ export const useEscrowStore = defineStore('escrowStore', {
           isNotFullFill &&
           isNotSelf &&
           isNotFilled &&
-          passesFilterType
+          passesFilterType &&
+          (hasNameRequest ||
+            hasNameDeposit ||
+            hasSymbolRequest ||
+            hasSymbolDepost)
         );
       });
 
@@ -139,36 +177,32 @@ export const useEscrowStore = defineStore('escrowStore', {
             (t) => t.address == requestToken.toString(),
           );
 
-          let key: any;
-          switch (this.filter_cards.by) {
-            case 'buy':
-              key = `${dToken?.symbol}`;
-              break;
-            case 'sell':
-              key = `${rToken?.symbol}`;
-              break;
-            default:
-              key = `${dToken?.symbol}-${rToken?.symbol}`;
-              break;
+          // Helper function to initialize the structure if the token is encountered for the first time
+          const initializeTokenGroup = (acc: any, tokenSymbol: any) => {
+            if (!acc[tokenSymbol]) {
+              acc[tokenSymbol] = { buy: [], sell: [] };
+            }
+          };
+
+          // Group by the deposit token (dToken) for "sell" since escrow is depositing that token
+          if (dToken) {
+            const dTokenSymbol = dToken.symbol;
+            initializeTokenGroup(acc, dTokenSymbol);
+            acc[dTokenSymbol].buy.push(item);
           }
 
-          // Create a unique key for the combination of depositToken and requestToken
-
-          // If the key doesn't exist in the accumulator, initialize it with an empty array
-          if (!acc[key]) {
-            acc[key] = [] as any;
+          // Group by the request token (rToken) for "buy" since escrow is requesting that token
+          if (rToken) {
+            const rTokenSymbol = rToken.symbol;
+            initializeTokenGroup(acc, rTokenSymbol);
+            acc[rTokenSymbol].sell.push(item);
           }
-
-          // Push the current item to the respective group
-          if (useEscrowStore().filter_cards.treeKeys.includes(key))
-            acc[key].push(item);
 
           return acc;
         },
-        {} as Record<string, I_Escrows[]>,
+        {} as Record<string, { buy: I_Escrows[]; sell: I_Escrows[] }>,
       );
-
-      console.log('== UPDATED FILTER');
+      console.log(this.escrows_cards), console.log('== UPDATED FILTER');
     },
   },
 });

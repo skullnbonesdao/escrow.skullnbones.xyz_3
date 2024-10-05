@@ -135,9 +135,6 @@ function total_amount(
 
 function lowest_prices(escrows: I_Escrows[], symbol: string) {
   if (escrows.length == 0) return;
-
-  console.log(symbol);
-  console.log(escrows);
   return escrows.map((escrow) => {
     return [escrow.account.price, 1 / escrow.account.price];
   });
@@ -447,6 +444,7 @@ const data = computed(() => useEscrowStore().escrows_cards);
                           name: 'price',
                           label: 'Price per Unit',
                           field: 'account',
+
                           format: (val: Escrow, row) =>
                             `${val.price.toString()}`,
                           sortable: true,
