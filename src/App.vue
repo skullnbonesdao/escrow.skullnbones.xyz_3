@@ -24,8 +24,11 @@ useGlobalStore().init();
 initWorkspace();
 
 onMounted(async () => {
+  if (useWallet().publicKey) {
+    await userTokenStore().load_token_accounts();
+    await useWhitelistStore().prepare_whitelisted();
+  }
   await useEscrowStore().load_all_escrows();
-  useGlobalStore().is_init = true;
 });
 
 watch(
