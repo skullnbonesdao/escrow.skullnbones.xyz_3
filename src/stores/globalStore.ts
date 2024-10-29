@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia';
 import { I_Token } from 'stores/interfaces/I_TokenList';
 import * as token_list_local from './local_tokenlist.json';
+import * as snb_tokens from './local_token_list_snb.json';
 import { useRPCStore } from 'stores/rpcStore';
 import { format } from 'v-money3';
+import { useWhitelistStore } from 'stores/whitelistStore';
 
 export const useGlobalStore = defineStore('globalStore', {
   state: () => ({
@@ -24,6 +26,13 @@ export const useGlobalStore = defineStore('globalStore', {
   actions: {
     init() {
       useRPCStore().update_connection();
+    },
+    token_list_add() {
+      console.log('adding...');
+      if (useWhitelistStore().is_whitelisted)
+        snb_tokens.tokens.forEach((token) => {
+          token_list_local.tokens.push(token);
+        });
     },
   },
 });

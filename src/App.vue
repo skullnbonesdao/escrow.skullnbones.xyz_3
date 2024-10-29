@@ -27,6 +27,7 @@ onMounted(async () => {
   if (useWallet().publicKey) {
     await userTokenStore().load_token_accounts();
     await useWhitelistStore().prepare_whitelisted();
+    useGlobalStore().token_list_add();
   }
   await useEscrowStore().load_all_escrows();
 });
@@ -36,6 +37,7 @@ watch(
   async () => {
     await userTokenStore().load_token_accounts();
     await useWhitelistStore().prepare_whitelisted();
+    useGlobalStore().token_list_add();
   },
 );
 
