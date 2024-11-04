@@ -1,7 +1,11 @@
 {
   "name": "Escrow Token List",
   "logoURI": "",
-  "keywords": ["solana", "spl", "sa"],
+  "keywords": [
+    "solana",
+    "spl",
+    "sa"
+  ],
   "tags": {
     "lp-token": {
       "name": "lp-token",
@@ -20,7 +24,9 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 101,
@@ -32,7 +38,9 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 101,
@@ -44,7 +52,9 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 101,
@@ -53,10 +63,15 @@
       "address": "CzLWmvjtj5bp9YEWkzzBnuWovVtogeuchFu5GeFh68hB",
       "decimals": 9,
       "logoURI": "https://gateway.irys.xyz/ILXdxJTexpeuGPKMjPtP4wBmvg4x3GlI3nc0n4V9RIU",
-      "tags": ["community", "jupiter"],
+      "tags": [
+        "community",
+        "jupiter"
+      ],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 101,
@@ -65,10 +80,15 @@
       "address": "DL8JvF2THu5WCf6cCzypAVFqMgSEo8p5WrVeSSdvS9cr",
       "decimals": 8,
       "logoURI": "https://arweave.net/GJvSfrTGByEIlLxt3l_LaPjAbSFthnBgjuvJVeCFxHk",
-      "tags": ["community", "s&B"],
+      "tags": [
+        "community",
+        "s&B"
+      ],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 0,
@@ -80,7 +100,9 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["Token"]
+      "tree": [
+        "Token"
+      ]
     },
     {
       "chainId": 101,
@@ -92,7 +114,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -104,7 +130,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -116,7 +146,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -128,7 +162,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -140,7 +178,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -152,7 +194,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -164,7 +210,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -176,7 +226,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -188,7 +242,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -200,7 +258,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "common"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -212,7 +274,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -224,7 +290,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -236,7 +306,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -248,7 +322,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -260,7 +338,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -272,7 +354,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -284,7 +370,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -296,7 +386,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -308,7 +402,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -320,7 +418,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -332,7 +434,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "common"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -344,7 +450,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -356,7 +466,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -368,7 +482,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -380,7 +498,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -392,7 +514,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -404,7 +530,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -416,7 +546,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -428,7 +562,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -440,7 +578,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -452,7 +594,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -464,7 +610,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -476,7 +626,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -488,7 +642,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "rare"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -500,7 +658,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -512,7 +674,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -524,7 +690,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -536,7 +706,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -548,7 +722,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -560,7 +738,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -572,7 +754,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -584,7 +770,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -596,7 +786,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -608,7 +802,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -620,7 +818,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -632,7 +834,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -644,7 +850,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -656,7 +866,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -668,7 +882,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -680,7 +898,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -692,7 +914,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -704,7 +930,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -716,7 +946,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -728,7 +962,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "common"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -740,7 +978,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -752,7 +994,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -764,7 +1010,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -776,7 +1026,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -788,7 +1042,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -800,7 +1058,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "epic"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -812,7 +1074,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -824,7 +1090,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -836,7 +1106,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -848,7 +1122,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -860,7 +1138,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -872,7 +1154,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -884,7 +1170,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -896,7 +1186,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -908,7 +1202,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -920,7 +1218,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -932,7 +1234,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -944,7 +1250,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -956,7 +1266,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -968,7 +1282,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -980,7 +1298,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -992,7 +1314,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1004,7 +1330,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1016,7 +1346,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1028,7 +1362,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "epic"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1040,7 +1378,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1052,7 +1394,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1064,7 +1410,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1076,7 +1426,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1088,7 +1442,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1100,7 +1458,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1112,7 +1474,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1124,7 +1490,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1136,7 +1506,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1148,7 +1522,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1160,7 +1538,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1172,7 +1554,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1184,7 +1570,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1196,7 +1586,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1208,7 +1602,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1220,7 +1618,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1232,7 +1634,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1244,7 +1650,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1256,7 +1666,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1268,7 +1682,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1280,7 +1698,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1292,7 +1714,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1304,7 +1730,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1316,7 +1746,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1328,7 +1762,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1340,7 +1778,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1352,7 +1794,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1364,7 +1810,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1376,7 +1826,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1388,7 +1842,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1400,7 +1858,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1412,7 +1874,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1424,7 +1890,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1436,7 +1906,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1448,7 +1922,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1460,7 +1938,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1472,7 +1954,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1484,7 +1970,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1496,7 +1986,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1508,7 +2002,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1520,7 +2018,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1532,7 +2034,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1544,7 +2050,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1556,7 +2066,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1568,7 +2082,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1580,7 +2098,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1592,7 +2114,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1604,7 +2130,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1616,7 +2146,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "common"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1628,7 +2162,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1640,7 +2178,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1652,7 +2194,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1664,7 +2210,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1676,7 +2226,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1688,7 +2242,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "epic"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1700,7 +2258,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1712,7 +2274,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1724,7 +2290,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1736,7 +2306,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1748,7 +2322,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "epic"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1760,7 +2338,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1772,7 +2354,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1784,7 +2370,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1796,7 +2386,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1808,7 +2402,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1820,7 +2418,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "epic"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1832,7 +2434,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1844,7 +2450,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1856,7 +2466,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1868,7 +2482,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -1880,7 +2498,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -1892,7 +2514,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "epic"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -1904,7 +2530,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -1916,7 +2546,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -1928,7 +2562,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1940,7 +2578,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1952,7 +2594,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1964,7 +2610,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1976,7 +2626,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -1988,7 +2642,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2000,7 +2658,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2012,7 +2674,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2024,7 +2690,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2036,7 +2706,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2048,7 +2722,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2060,7 +2738,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2072,7 +2754,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2084,7 +2770,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2096,7 +2786,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2108,7 +2802,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2120,7 +2818,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2132,7 +2834,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2144,7 +2850,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2156,7 +2866,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "common"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2168,7 +2882,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2180,7 +2898,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2192,7 +2914,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "rare"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2204,7 +2930,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "epic"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2216,7 +2946,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2228,7 +2962,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2240,7 +2978,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2252,7 +2994,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2264,7 +3010,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "common"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2276,7 +3026,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "common"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2288,7 +3042,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "rare"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2300,7 +3058,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2312,7 +3074,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2324,7 +3090,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2336,7 +3106,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "rare"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2348,7 +3122,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "epic"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2360,7 +3138,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "epic"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2372,7 +3154,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "rare"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2384,7 +3170,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2396,7 +3186,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2408,7 +3202,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2420,7 +3218,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2432,7 +3234,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "structure", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "structure",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2444,7 +3250,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2456,7 +3266,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2468,7 +3282,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2480,7 +3298,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -2492,7 +3314,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2504,7 +3330,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2516,7 +3346,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -2528,7 +3362,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "common"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2540,7 +3378,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "rare"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -2552,7 +3394,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2564,7 +3410,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2576,7 +3426,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2588,7 +3442,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2600,7 +3458,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2612,7 +3474,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2624,7 +3490,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2636,7 +3506,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2648,7 +3522,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2660,7 +3538,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2672,7 +3554,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2684,7 +3570,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2696,7 +3586,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2708,7 +3602,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2720,7 +3618,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2732,7 +3634,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2744,7 +3650,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2756,7 +3666,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2768,7 +3682,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2780,7 +3698,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2792,7 +3714,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2804,7 +3730,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2816,7 +3746,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2828,7 +3762,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2840,7 +3778,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2852,7 +3794,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2864,7 +3810,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2876,7 +3826,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2888,7 +3842,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2900,7 +3858,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2912,7 +3874,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2924,7 +3890,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2936,7 +3906,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "epic"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2948,7 +3922,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2960,7 +3938,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -2972,7 +3954,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2984,7 +3970,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -2996,7 +3986,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3008,7 +4002,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3020,7 +4018,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3032,7 +4034,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "epic"
+      ]
     },
     {
       "chainId": 101,
@@ -3044,7 +4050,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3056,7 +4066,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3068,7 +4082,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3080,7 +4098,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "legendary"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "legendary"
+      ]
     },
     {
       "chainId": 101,
@@ -3092,7 +4114,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "common"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3104,7 +4130,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3116,7 +4146,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3128,7 +4162,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3140,7 +4178,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3152,7 +4194,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3164,7 +4210,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "common"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3176,7 +4226,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "memories", "rare"]
+      "tree": [
+        "StarAtlas",
+        "memories",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3188,7 +4242,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "story", "common"]
+      "tree": [
+        "StarAtlas",
+        "story",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3200,7 +4258,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3212,7 +4274,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3224,7 +4290,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "anomaly"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "anomaly"
+      ]
     },
     {
       "chainId": 101,
@@ -3236,7 +4306,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3248,7 +4322,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3260,7 +4338,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3272,7 +4354,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3284,7 +4370,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3296,7 +4386,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3308,7 +4402,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "common"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3320,7 +4418,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3332,7 +4434,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "ship", "rare"]
+      "tree": [
+        "StarAtlas",
+        "ship",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3344,7 +4450,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "rare"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3356,7 +4466,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "uncommon"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "uncommon"
+      ]
     },
     {
       "chainId": 101,
@@ -3368,7 +4482,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "common"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3380,7 +4498,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "platinum"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "platinum"
+      ]
     },
     {
       "chainId": 101,
@@ -3392,7 +4514,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "common"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3404,7 +4530,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "access", "common"]
+      "tree": [
+        "StarAtlas",
+        "access",
+        "common"
+      ]
     },
     {
       "chainId": 101,
@@ -3416,7 +4546,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "silver"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "silver"
+      ]
     },
     {
       "chainId": 101,
@@ -3428,7 +4562,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "silver"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "silver"
+      ]
     },
     {
       "chainId": 101,
@@ -3440,7 +4578,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "gold"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "gold"
+      ]
     },
     {
       "chainId": 101,
@@ -3452,7 +4594,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "gold"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "gold"
+      ]
     },
     {
       "chainId": 101,
@@ -3464,7 +4610,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "platinum"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "platinum"
+      ]
     },
     {
       "chainId": 101,
@@ -3476,7 +4626,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "crew", "platinum"]
+      "tree": [
+        "StarAtlas",
+        "crew",
+        "platinum"
+      ]
     },
     {
       "chainId": 101,
@@ -3488,7 +4642,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "collectible", "rare"]
+      "tree": [
+        "StarAtlas",
+        "collectible",
+        "rare"
+      ]
     },
     {
       "chainId": 101,
@@ -3500,7 +4658,11 @@
       "tags": [],
       "verified": true,
       "holders": null,
-      "tree": ["StarAtlas", "resource", "epic"]
+      "tree": [
+        "StarAtlas",
+        "resource",
+        "epic"
+      ]
     }
   ]
 }
