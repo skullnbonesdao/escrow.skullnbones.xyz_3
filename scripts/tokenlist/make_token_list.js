@@ -104,6 +104,10 @@ fetch(url, settings)
   .then((json) => {
     json
       .filter((element) => element.attributes.itemType != 'currency')
+      .filter(
+        (element) =>
+          element.mint != 'GLDTKDYdSkdCzSC6fqRWqHZ5fUQGsm1CM4nMZnsCZNcX',
+      )
       .forEach((element) => {
         custom_list.tokens.push({
           chainId: 101,

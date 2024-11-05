@@ -8,10 +8,10 @@ imagesDirWEBP="$outputDir/images/webp"
 
 
 
-mkdir "$outputDir"
-mkdir "$downloadDir"
-mkdir "$imagesDirJPG"
-mkdir "$imagesDirWEBP"
+mkdir -p "$outputDir"
+mkdir -p "$downloadDir"
+mkdir -p "$imagesDirJPG"
+mkdir -p "$imagesDirWEBP"
 
 
 echo "=== Fetching API ==="
@@ -21,7 +21,8 @@ IMAGES_NAME=($(echo "$DATA" | jq -r ".[] | .mint"))
 
 for i in "${!IMAGES[@]}"; do
    echo "> Downloading: ${IMAGES[$i]}"
-   curl -s "${IMAGES[$i]}" -o "$downloadDir/${IMAGES_NAME[$i]}".jpg &
+   #curl -s "${IMAGES[$i]}" -o "$downloadDir/${IMAGES_NAME[$i]}".jpg &
+   curl "${IMAGES[$i]}" -o "$downloadDir/${IMAGES_NAME[$i]}".jpg
 done
 
 # Wait for all background tasks to complete
@@ -42,16 +43,7 @@ for img in "$downloadDir"/*.{jpg,jpeg,png}; do
         cwebp "$output_file_jpg" -o $output_file_webp
     fi
 done
-
-#echo "=== Downloading images ==="
-#for i in "${!IMAGES[@]}"; do
-# echo "> Downloading: ${IMAGES[$i]}"
-# curl "${IMAGES[$i]}" -o "$output_dir/jpg/${IMAGES_NAME[$i]}".jpg
-# echo "> Converting: $output_dir/jpg/${IMAGES_NAME[$i]}.jpg to .webp"
-# convert "$output_dir/jpg/${IMAGES_NAME[$i]}".jpg -resize 100 -quality 5 "$output_dir/jpg/low/${IMAGES_NAME[$i]}".jpg
-# convert "$output_dir/jpg/${IMAGES_NAME[$i]}".jpg -quality 5 "$output_dir/jpg/${IMAGES_NAME[$i]}".jpg
-# convert "$output_dir/jpg/${IMAGES_NAME[$i]}".jpg "$output_dir/webp/${IMAGES_NAME[$i]}".webp
-#done
+wait
 
 
 echo "=== DONE! ==="
