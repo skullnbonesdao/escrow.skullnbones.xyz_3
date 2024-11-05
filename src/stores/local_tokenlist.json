@@ -2760,18 +2760,6 @@
     },
     {
       "chainId": 101,
-      "name": "Golden Ticket 2623",
-      "symbol": "GLDTKT",
-      "address": "GLDTKDYdSkdCzSC6fqRWqHZ5fUQGsm1CM4nMZnsCZNcX",
-      "decimals": 0,
-      "logoURI": "tokens/webp/GLDTKDYdSkdCzSC6fqRWqHZ5fUQGsm1CM4nMZnsCZNcX.webp",
-      "tags": [],
-      "verified": true,
-      "holders": null,
-      "tree": ["StarAtlas", "collectible", "epic"]
-    },
-    {
-      "chainId": 101,
       "name": "Graphene",
       "symbol": "GRAPH",
       "address": "GRAPHKGoKtXtdPBx17h6fWopdT5tLjfAP8cDJ1SvvDn4",
