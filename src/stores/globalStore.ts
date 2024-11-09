@@ -11,7 +11,9 @@ export const useGlobalStore = defineStore('globalStore', {
     showLeftDrawer: false,
     leftDrawerMini: false,
     showRightDrawer: false,
+
     token_list: token_list_local.tokens as I_Token[],
+    added_extra: false,
   }),
   getters: {
     getAsTree(state) {
@@ -28,11 +30,15 @@ export const useGlobalStore = defineStore('globalStore', {
       useRPCStore().update_connection();
     },
     token_list_add() {
-      console.log('adding...');
-      if (useWhitelistStore().is_whitelisted)
-        snb_tokens.tokens.forEach((token) => {
-          token_list_local.tokens.push(token);
-        });
+      if (!this.added_extra) {
+        console.log('adding...');
+        if (useWhitelistStore().is_whitelisted) {
+          snb_tokens.tokens.forEach((token) => {
+            token_list_local.tokens.push(token);
+          });
+          this.added_extra = true;
+        }
+      }
     },
   },
 });
