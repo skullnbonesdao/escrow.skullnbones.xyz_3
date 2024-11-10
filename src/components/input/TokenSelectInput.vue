@@ -3,6 +3,7 @@ import { ref, watch } from 'vue';
 import { useGlobalStore } from 'stores/globalStore';
 import TokenIcon from 'components/elements/TokenIcon.vue';
 import { userTokenStore } from '../../stores/userTokenStore';
+import TextHightlighted from 'components/elements/TextHightlighted.vue';
 
 const emits = defineEmits(['token_change']);
 const props = defineProps([
@@ -31,7 +32,10 @@ function filterFn(val, update) {
         } else {
           const needle = val.toLowerCase();
           options.value = useGlobalStore().token_list.filter(
-            (v) => v.name.toLowerCase().indexOf(needle) > -1,
+            (v) =>
+              v.name.toLowerCase().indexOf(needle.toLowerCase()) > -1 ||
+              v.address.toLowerCase().indexOf(needle.toLowerCase()) > -1 ||
+              v.symbol.toLowerCase().indexOf(needle.toLowerCase()) > -1,
           );
         }
 
@@ -61,6 +65,8 @@ function filterFn(val, update) {
 function abortFilterFn() {
   // console.log('delayed filter aborted')
 }
+
+const select_value = ref();
 </script>
 
 <template>
@@ -69,6 +75,7 @@ function abortFilterFn() {
     square
     filled
     v-model="model"
+    @input-value="(v) => (select_value = v)"
     input-debounce="0"
     use-input
     clearable
@@ -94,12 +101,24 @@ function abortFilterFn() {
         <q-item-section>
           <div class="row">
             <div class="">
-              <q-item-label
-                >{{ scope.opt.name }} [{{ scope.opt.symbol }}]</q-item-label
-              >
-              <q-item-label caption class="overflow-auto">{{
-                scope.opt.address
-              }}</q-item-label>
+              <q-item-label>
+                <div class="row q-gutter-x-sm">
+                  <TextHightlighted
+                    :search="select_value"
+                    :text="scope.opt.name.toString()"
+                  />
+                  <TextHightlighted
+                    :search="select_value"
+                    :text="'[' + scope.opt.symbol.toString() + ']'"
+                  />
+                </div>
+              </q-item-label>
+              <q-item-label caption class="overflow-auto">
+                <TextHightlighted
+                  :search="select_value"
+                  :text="scope.opt.address.toString()"
+                />
+              </q-item-label>
             </div>
             <div class="col text-right">
               <q-item-label caption>Available</q-item-label>
