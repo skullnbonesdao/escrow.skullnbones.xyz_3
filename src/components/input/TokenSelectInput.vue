@@ -104,14 +104,12 @@ const select_value = ref();
               <q-item-label>
                 <div class="row q-gutter-x-sm">
                   <TextHightlighted
-                    class="col-4"
-                    :search="select_value"
-                    :text="'[' + scope.opt.symbol.toString() + ']'"
-                  />
-                  <TextHightlighted
-                    class="col"
                     :search="select_value"
                     :text="scope.opt.name.toString()"
+                  />
+                  <TextHightlighted
+                    :search="select_value"
+                    :text="'[' + scope.opt.symbol.toString() + ']'"
                   />
                 </div>
               </q-item-label>
