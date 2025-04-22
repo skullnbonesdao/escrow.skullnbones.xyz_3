@@ -68,21 +68,6 @@ let custom_list = {
       holders: null,
       tree: ['Token'],
     },
-
-    {
-      chainId: 101,
-      name: 'DACBloon',
-      symbol: 'DACB',
-      address: 'DL8JvF2THu5WCf6cCzypAVFqMgSEo8p5WrVeSSdvS9cr',
-      decimals: 8,
-      logoURI:
-        'https://arweave.net/GJvSfrTGByEIlLxt3l_LaPjAbSFthnBgjuvJVeCFxHk',
-      tags: ['community', 's&B'],
-      verified: true,
-      holders: null,
-      tree: ['Token'],
-    },
-
     {
       chainId: 0,
       name: 'Tokes',
